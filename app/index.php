@@ -1,6 +1,8 @@
 <?php
 require_once './controllers/home.controller.php';
 require_once './controllers/product.controller.php';
+require_once './controllers/news.controller.php';
+require_once './controllers/introduce.controller.php';
 require_once './views/header.php';
 require_once '../public/models/database.php';
 require_once '../public/models/product.model.php';
@@ -13,6 +15,14 @@ if (isset($_GET['page'])) {
     switch ($page) {
         case 'trangChu':
             $productController->getAllProduct();
+            break;
+        
+        case 'tintuc':
+            $tintuc = new tintucController();
+            break;
+
+        case 'gioithieu':
+            $gioithieu = new gioithieuController();
             break;
         
         default:

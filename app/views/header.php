@@ -38,7 +38,7 @@
 </script>
   <header>
     <nav class="navbar navbar-expand-lg menu">
-      <div class="container"><a class="navbar-brand" href="#"><img class="img-logo" src="../public/client/images/logo.png"></a>
+      <div class="container"><a class="navbar-brand" href="index.php?page=trangChu"><img class="img-logo" src="../public/client/images/logo.png"></a>
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu" aria-controls="offcanvasNavbar" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="search-home-page">
           <button type="button" class="">
@@ -56,10 +56,10 @@
 
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 text-uppercase">
-              <li class="nav-item mx-lg-4"><a class="nav-link" href="index.html">Trang Chủ</a></li>
+              <li class="nav-item mx-lg-4"><a class="nav-link" href="index.php?page=trangChu">Trang Chủ</a></li>
               <li class="nav-item mx-lg-4"><a class="nav-link" href="product.html">Sản Phẩm</a></li>
-              <li class="nav-item mx-lg-4"><a class="nav-link" href="system.html">Tin tức</a></li>
-              <li class="nav-item mx-lg-4"><a class="nav-link" href="overview.html">Giới thiệu</a></li>
+              <li class="nav-item mx-lg-4"><a class="nav-link" href="index.php?page=tintuc">Tin tức</a></li>
+              <li class="nav-item mx-lg-4"><a class="nav-link" href="index.php?page=gioithieu">Giới thiệu</a></li>
               <li class="nav-item mx-lg-4"><a class="nav-link" href="contact.html">Liên Hệ</a></li>
             </ul>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
