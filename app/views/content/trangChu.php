@@ -15,15 +15,17 @@
             </div>
           </div>
         </div>
+        
         <div class="row">
           <?php
-          $listProducts = $data['products'];
+          $listProducts = $data['dssp'];
           foreach ($listProducts as $product) {
             extract($product);
-            echo '<div class="col-md-6 col-lg-4 py-3 wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="0.3s">
+            echo '
+            <div class="col-md-3 col-lg-3 py-3 wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="0.3s">
                         <div class="card team-card hvr-float">
                         <div class="card-body">
-                    <div class="card-img w-100 justify-content-center team-banner"><img class="team-img" src="../public/client/images/' . $image . '"></div>
+                    <div class="card-img w-100 justify-content-center team-banner"><img class="team-img" src="../public/client/images/danhmuc/'.$tendanhmuc.'/'.$image.'"></div>
                     <div class="pt-2 text-start d-flex align-items-center"><i class="fa-solid fa-user"></i>
                         <p class="mb-0 mx-3">' . $buying . ' Buying</p>
                     </div>

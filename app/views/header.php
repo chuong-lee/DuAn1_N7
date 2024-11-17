@@ -36,38 +36,31 @@
         }
     });
 </script>
-  <header>
-    <nav class="navbar navbar-expand-lg menu">
-      <div class="container"><a class="navbar-brand" href="index.php?page=trangChu"><img class="img-logo" src="../public/client/images/logo.png"></a>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu" aria-controls="offcanvasNavbar" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-        <div class="search-home-page">
-          <button type="button" class="">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-            </svg>
-          </button>
-          <input type="text" placeholder="Tìm kiếm sản phẩm">
+<header>
+  <nav class="navbar navbar-expand-lg mx-lg-4">
+    <div class="container-fluid"><a class="navbar-brand" href="index.html"><img class="img-logo" src="./client/images/logo.png"/></a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu" aria-controls="offcanvasNavbar" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="offcanvas offcanvas-start" id="menu" tabindex="-1" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <div class="offcanvas-title"><img class="img-logo" src="../public/client/images/logo.png"/></div>
+          <button class="btn-close" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="offcanvas offcanvas-start" id="menu" tabindex="-1" aria-labelledby="offcanvasNavbarLabel">
-          <div class="offcanvas-header">
-            <div class="offcanvas-title"><img class="img-logo" src="../public/client/images/logo.png"></div>
-            <button class="btn-close" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-
-          <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 text-uppercase">
-              <li class="nav-item mx-lg-4"><a class="nav-link" href="index.php?page=trangChu">Trang Chủ</a></li>
-              <li class="nav-item mx-lg-4"><a class="nav-link" href="product.html">Sản Phẩm</a></li>
-              <li class="nav-item mx-lg-4"><a class="nav-link" href="index.php?page=tintuc">Tin tức</a></li>
-              <li class="nav-item mx-lg-4"><a class="nav-link" href="index.php?page=gioithieu">Giới thiệu</a></li>
-              <li class="nav-item mx-lg-4"><a class="nav-link" href="contact.html">Liên Hệ</a></li>
-            </ul>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-              <button class="btn btn-primary me-md-2" type="button">Đăng KÍ</button>
-              <button class="btn btn-primary" type="button">ĐĂng Nhập</button>
-            </div>
-          </div>
+        <div class="offcanvas-body align-items-center">
+          <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 align-items-center">
+            <li class="nav-item mx-lg-2">
+              <div class="input-group"><span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+                <input class="form-control" id="exampleInputEmail1" type="email" placeholder="Serch" aria-describedby="emailHelp" required=""/><span class="input-group-text">Serch</span>
+              </div>
+            </li>
+            <li class="nav-item mx-lg-2"><a class="nav-link" href="index.html">Trang Chủ</a></li>
+            <li class="nav-item mx-lg-2"><a class="nav-link" href="product.html">Sản Phẩm</a></li>
+            <li class="nav-item mx-lg-2"><a class="nav-link" href="new-post.html">Tin tức</a></li>
+            <li class="nav-item mx-lg-2"><a class="nav-link" href="about-us.html">Giới thiệu</a></li>
+            <li class="nav-item mx-lg-2"><a class="nav-link" href="contact.html">Liên Hệ</a></li>
+          </ul>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end"><a class="btn btn-primary me-md-2 btn-log" type="button" href="register.html">Đăng KÍ</a><a class="btn btn-primary btn-reg" type="button" href="Login.html">ĐĂng Nhập</a></div><a class="text-black fs-4 align-items-center ms-3" type="button" href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
       </div>
-    </nav>
-  </header>
+    </div>
+  </nav>
+</header>
