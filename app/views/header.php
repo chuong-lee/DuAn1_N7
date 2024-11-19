@@ -54,8 +54,8 @@
             </li>
             <li class="nav-item mx-lg-2"><a class="nav-link" href="index.html">Trang Chủ</a></li>
             <li class="nav-item mx-lg-2"><a class="nav-link" href="product.html">Sản Phẩm</a></li>
-            <li class="nav-item mx-lg-2"><a class="nav-link" href="new-post.html">Tin tức</a></li>
-            <li class="nav-item mx-lg-2"><a class="nav-link" href="about-us.html">Giới thiệu</a></li>
+            <li class="nav-item mx-lg-2"><a class="nav-link" href="index.php?page=tintuc">Tin tức</a></li>
+            <li class="nav-item mx-lg-2"><a class="nav-link" href="index.php?page=gioithieu">Giới thiệu</a></li>
             <li class="nav-item mx-lg-2"><a class="nav-link" href="contact.html">Liên Hệ</a></li>
           </ul>
           <div class="d-grid gap-2 d-md-flex justify-content-md-end"><a class="btn btn-primary me-md-2 btn-log" type="button" href="register.html">Đăng KÍ</a><a class="btn btn-primary btn-reg" type="button" href="Login.html">ĐĂng Nhập</a></div><a class="text-black fs-4 align-items-center ms-3" type="button" href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
