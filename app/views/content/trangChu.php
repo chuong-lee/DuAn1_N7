@@ -1,6 +1,8 @@
 <section>
+  <link rel="stylesheet" href="<?php echo '../public/client/css/trangChu.css'; ?>">
   <?php
   require_once 'banner.header.php';
+
   ?>
   <div class="team team-box pb-4 my-5" id="team">
     <div class="team-content pb-3 pb-lg-5">
@@ -15,17 +17,18 @@
             </div>
           </div>
         </div>
-        
+
         <div class="row">
           <?php
           $listProducts = $data['dssp'];
           foreach ($listProducts as $product) {
             extract($product);
+            $formattedName = str_replace(' ', '', $tendanhmuc);
             echo '
             <div class="col-md-3 col-lg-3 py-3 wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="0.3s">
                         <div class="card team-card hvr-float">
                         <div class="card-body">
-                    <div class="card-img w-100 justify-content-center team-banner"><img class="team-img" src="../public/client/images/danhmuc/'.$tendanhmuc.'/'.$image.'"></div>
+                    <div class="card-img w-100 justify-content-center team-banner"><img class="team-img" src="../public/client/images/danhmuc/' . $formattedName . '/' . $image . '"></div>
                     <div class="pt-2 text-start d-flex align-items-center"><i class="fa-solid fa-user"></i>
                         <p class="mb-0 mx-3">' . $buying . ' Buying</p>
                     </div>
@@ -39,7 +42,7 @@
                     <p class="ms-3 text-decoration-line-through mb-0">' . $sale_price . ' VNĐ</p>
                   </div>
                   <div class="align-items-center text-start mx-3 mb-2">
-                    <button class="btn btn-submit text-white" type="submit">Mua ngay</button>
+                    <button class="btn btn-submit text-white" type="submit"><a href="trangChu.php?page=detailSale&id=' . $id_product . '">Mua ngay</a></button>
                   </div>
                   </div>
                 </div>';
@@ -58,20 +61,31 @@
           </div>
           <div class="featured-controls">
             <ul class="controls-list">
-              <li class="active list-nav" data-filter="*">All</li>
-              <li class="list-nav" data-filter=". ">Nhẫn</li>
-              <li class="list-nav" data-filter=".">Dây Chuyền</li>
-              <li class="list-nav" data-filter=".">Lăc tay</li>
-              <li class="list-nav" data-filter=".">Dây Lưng</li>
+              <?php
+              $listCate = $data['dsdm'];
+              foreach ($listCate as $cate) {
+                // print_r($cate);
+                extract($cate);
+                echo '<li class="list-nav" id="list-cate-' . $id . '" data-filter=". " onclick="handleClick(' . $id . ')">' . str_repeat('&nbsp;', strlen($name))
+                  . $name
+                  . '</li>';
+              }
+              ?>
+              <!-- <li class="active list-nav" data-filter="*">All</li> -->
             </ul>
           </div>
         </div>
       </div>
       <div class="featured-filter">
         <div class="row">
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <?php
+          $listProductsByCate = $data['sptdm'];
+          foreach ($listProductsByCate as $product) {
+            extract($product);
+            $formattedName = str_replace(' ', '', $tendanhmuc);
+            echo '<div class="col-lg-3 col-md-4 col-sm-6">
             <div class="featured-item mb-4">
-              <div class="featured-item-pic set-bg" data-setbg><img src="../public/client/images/featured/feature-1.jpeg">
+              <div class="featured-item-pic set-bg" data-setbg><img src="../public/client/images/danhmuc/' . $formattedName . '/' . $image . '">
                 <ul class="featured-item-pic-hover">
                   <li class="featured-item-list"><a href="#"><i class="fa fa-heart"></i></a></li>
                   <li class="featured-item-list"><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -79,119 +93,17 @@
                 </ul>
               </div>
               <div class="featured-item-text text-highline text-center">
-                <h6 class="text"><a href="#">Crab Pool Security</a></h6>
-                <h5 class="text-price">$30.00</h5>
+                <h6 class="text"><a href="#">' . $name . '</a></h6>
+                <h5 class="text-price">' . $price . 'VND</h5>
               </div>
             </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="featured-item mb-4">
-              <div class="featured-item-pic set-bg" data-setbg><img src="../public/client/images/featured/feature-2.jpeg">
-                <ul class="featured-item-pic-hover">
-                  <li class="featured-item-list"><a href="#"><i class="fa fa-heart"></i></a></li>
-                  <li class="featured-item-list"><a href="#"><i class="fa fa-retweet"></i></a></li>
-                  <li class="featured-item-list"><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                </ul>
-              </div>
-              <div class="featured-item-text text-highline text-center">
-                <h6 class="text"><a href="#">Crab Pool Security</a></h6>
-                <h5 class="text-price">$30.00</h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="featured-item mb-4">
-              <div class="featured-item-pic set-bg" data-setbg><img src="../public/client/images/featured/feature-3.jpeg">
-                <ul class="featured-item-pic-hover">
-                  <li class="featured-item-list"><a href="#"><i class="fa fa-heart"></i></a></li>
-                  <li class="featured-item-list"><a href="#"><i class="fa fa-retweet"></i></a></li>
-                  <li class="featured-item-list"><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                </ul>
-              </div>
-              <div class="featured-item-text text-highline text-center">
-                <h6 class="text"><a href="#">Crab Pool Security</a></h6>
-                <h5 class="text-price">$30.00</h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="featured-item mb-4">
-              <div class="featured-item-pic set-bg" data-setbg><img src="../public/client/images/featured/feature-4.jpeg">
-                <ul class="featured-item-pic-hover">
-                  <li class="featured-item-list"><a href="#"><i class="fa fa-heart"></i></a></li>
-                  <li class="featured-item-list"><a href="#"><i class="fa fa-retweet"></i></a></li>
-                  <li class="featured-item-list"><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                </ul>
-              </div>
-              <div class="featured-item-text text-highline text-center">
-                <h6 class="text"><a href="#">Crab Pool Security</a></h6>
-                <h5 class="text-price">$30.00</h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="featured-item mb-4">
-              <div class="featured-item-pic set-bg" data-setbg><img src="../public/client/images/featured/feature-5.jpeg">
-                <ul class="featured-item-pic-hover">
-                  <li class="featured-item-list"><a href="#"><i class="fa fa-heart"></i></a></li>
-                  <li class="featured-item-list"><a href="#"><i class="fa fa-retweet"></i></a></li>
-                  <li class="featured-item-list"><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                </ul>
-              </div>
-              <div class="featured-item-text text-highline text-center">
-                <h6 class="text"><a href="#">Crab Pool Security</a></h6>
-                <h5 class="text-price">$30.00</h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="featured-item mb-4">
-              <div class="featured-item-pic set-bg" data-setbg><img src="../public/client/images/featured/feature-6.jpeg">
-                <ul class="featured-item-pic-hover">
-                  <li class="featured-item-list"><a href="#"><i class="fa fa-heart"></i></a></li>
-                  <li class="featured-item-list"><a href="#"><i class="fa fa-retweet"></i></a></li>
-                  <li class="featured-item-list"><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                </ul>
-              </div>
-              <div class="featured-item-text text-highline text-center">
-                <h6 class="text"><a href="#">Crab Pool Security</a></h6>
-                <h5 class="text-price">$30.00</h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="featured-item mb-4">
-              <div class="featured-item-pic set-bg" data-setbg><img src="../public/client/images/featured/feature-7.jpeg">
-                <ul class="featured-item-pic-hover">
-                  <li class="featured-item-list"><a href="#"><i class="fa fa-heart"></i></a></li>
-                  <li class="featured-item-list"><a href="#"><i class="fa fa-retweet"></i></a></li>
-                  <li class="featured-item-list"><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                </ul>
-              </div>
-              <div class="featured-item-text text-highline text-center">
-                <h6 class="text"><a href="#">Crab Pool Security</a></h6>
-                <h5 class="text-price">$30.00</h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="featured-item mb-4">
-              <div class="featured-item-pic set-bg" data-setbg><img src="../public/client/images/featured/feature-8.jpeg">
-                <ul class="featured-item-pic-hover">
-                  <li class="featured-item-list"><a href="#"><i class="fa fa-heart"></i></a></li>
-                  <li class="featured-item-list"><a href="#"><i class="fa fa-retweet"></i></a></li>
-                  <li class="featured-item-list"><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                </ul>
-              </div>
-              <div class="featured-item-text text-highline text-center">
-                <h6 class="text"><a href="#">Crab Pool Security</a></h6>
-                <h5 class="text-price">$30.00</h5>
-              </div>
-            </div>
-          </div>
+          </div>';
+          }
+          ?>
         </div>
       </div>
     </div>
+  </div>
   </div>
   <div class="from-blog spad" id="blogsection">
     <div class="container">
@@ -272,37 +184,46 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-4 col-lg-4">
-            <div class="shirt-new-product"><a class="product-roll" href=""><img class="shirt-img w-100" data-sizes="auto" src="../public/client/images/love-product-1.jpeg" data-src="" alt="Áo Sơ Mi"></a></div>
+          <?php
+          $listProductsByCate = $data['sptrending'];
+          foreach ($listProductsByCate as $product) {
+            extract($product);
+            $formattedName = str_replace(' ', '', $tendanhmuc);
+            echo '<div class="col-sm-4 col-lg-4">
+            <div class="shirt-new-product"><a class="product-roll" href=""><img class="shirt-img w-100" data-sizes="auto" src="../public/client/images/danhmuc/'.$formattedName.'/'.$image.'" data-src="" alt="Áo Sơ Mi"></a></div>
             <div class="shirt-img-Home align-items-center text-start">
-              <h2><a href="" target="_self"> Shirt</a></h2><a class="shirt-img-View btn-buy" href="" target="_self">
+              <h2><a href="" target="_self">'.$name.'</a></h2><a class="shirt-img-View btn-buy" href="" target="_self">
                 Xem
                 Chi Tiet</a>
             </div>
-          </div>
-          <div class="col-sm-4 col-lg-4">
-            <div class="shirt-new-product"><a class="product-roll" href=""><img class="shirt-img w-100" data-sizes="auto" src="../public/client/images/love-product-1.jpeg" data-src="" alt="Áo Sơ Mi"></a></div>
-            <div class="shirt-img-Home align-items-center text-start">
-              <h2><a href="" target="_self"> Shirt</a></h2><a class="shirt-img-View btn-buy" href="" target="_self">
-                Xem
-                Chi Tiet</a>
-            </div>
-          </div>
-          <div class="col-sm-4 col-lg-4">
-            <div class="shirt-new-product">
-              <div class="product-roll"><img class="shirt-img w-100" data-sizes="auto" src="../public/client/images/love-product-1.jpeg" data-src="" alt="Áo Sơ Mi"></div>
-            </div>
-            <div class="shirt-img-Home align-items-center text-start">
-              <h2> Shirt</h2><a class="shirt-img-View btn-buy" href="" target="_self">
-                Xem
-                Chi Tiet</a>
-            </div>
-          </div>
+          </div>';
+          }
+          ?>
         </div>
       </div>
     </div>
   </div>
 </section>
+<script>
+  function handleClick(id) {
+    history.pushState(null, "", "index.php?id_danhmuc=" + id);
+    location.reload();
+    const urlParams = new URLSearchParams(window.location.search);
+    const idDanhmuc = urlParams.get('id_danhmuc');
+    console.log(111, idDanhmuc);
+    const allButtons = document.querySelectorAll('.list-nav');
+
+    allButtons.forEach(button => {
+      button.classList.remove('active');
+    });
+    const buttonCate = document.querySelector(`#list-cate-${id}`);
+    console.log(buttonCate);
+    if (id === Number(idDanhmuc)) {
+      buttonCate.classList.add('active');
+    }
+
+  }
+</script>
 <?php
 require_once '../public/link.php';
 ?>

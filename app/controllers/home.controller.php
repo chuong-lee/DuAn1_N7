@@ -21,9 +21,10 @@ class HomeController
     public function getAll()
     {
         $this->data['products'] = $this->productModel->getAllProduct();
-        $this->getDataByname(8,1);
+        $this->getDataByname(8, 1);
+        $this->getProductByCate();
         $this->data['dsdm'] = $this->categoryModel->getAllCategory();
-
+        $this->data['sptrending'] = $this->productModel->getProductTrending();
         $this->renderHome($this->data);
     }
 
@@ -40,12 +41,27 @@ class HomeController
                 }
             }
         }
-        usort($allProducts, function($a, $b) {
+        usort($allProducts, function ($a, $b) {
             return $b['buying'] <=> $a['buying'];
         });
         $offset = ($page - 1) * $limit;
         $allProducts = array_slice($allProducts, $offset, $limit);
         $this->data['dssp'] = $allProducts;
+    }
+
+    public function getProductByCate()
+    {
+        // b1 nhận request để lấy giá trị của cate 
+        // b2 lấy danh sách sản phẩm theo cate
+        // b3 đưa dữ liệu vào mảng dssp
+        if (isset($_GET['id_danhmuc'])) {
+            $id_danhmuc = $_GET['id_danhmuc'];
+            $products = $this->productModel->getProductByCate($id_danhmuc);
+            $allProducts = $products;
+        }else{
+            $allProducts = [];
+        }
+        $this->data['sptdm'] = $allProducts;
     }
 }
 ?>
