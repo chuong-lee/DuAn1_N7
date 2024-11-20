@@ -54,7 +54,7 @@
             </li>
             <li class="nav-item mx-lg-2"><a class="nav-link" href="index.php">Trang Chủ</a></li>
             <li class="nav-item mx-lg-2"><a class="nav-link" href="index.php?page=product">Sản Phẩm</a></li>
-            <li class="nav-item mx-lg-2"><a class="nav-link" href="index.php?page=tintu">Tin tức</a></li>
+            <li class="nav-item mx-lg-2"><a class="nav-link" href="index.php?page=tintuc">Tin tức</a></li>
             <li class="nav-item mx-lg-2"><a class="nav-link" href="index.php?page=gioithieu">Giới thiệu</a></li>
             <li class="nav-item mx-lg-2"><a class="nav-link" href="index.php?page=lienhe">Liên Hệ</a></li>
           </ul>
