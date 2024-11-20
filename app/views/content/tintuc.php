@@ -3,7 +3,7 @@
       <div class="new-post">
         <div class="container">
           <ol class="breadcrumb py-4 fs-6">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="index.php?page=trangChu">Home</a></li>
             <li class="breadcrumb-item"><a href="index.php?page=tintuc">Tin Tức</a></li>
           </ol>
           <div class="row gy-5">
