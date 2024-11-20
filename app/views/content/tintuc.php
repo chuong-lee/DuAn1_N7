@@ -17,7 +17,7 @@
                         <time datetime="2024-01-01">Jan 5, 2024</time></a></li>
                   </ul>
                 </div>
-                <h2 class="title"><a class="text-black" href="index.php?page=tintuc&split=mot">Top 10 Phụ Kiện Trang Sức Nam Không Thể Thiếu Trong Tủ Đồ Của Bạn</a></h2>
+                <h2 class="title"><a class="text-black" href="index.php?page=tintuc&split=1">Top 10 Phụ Kiện Trang Sức Nam Không Thể Thiếu Trong Tủ Đồ Của Bạn</a></h2>
               </article>
             </div>
             <div class="col-lg-4 col-md-6">
@@ -30,7 +30,7 @@
                         <time datetime="2024-01-01">Jan 14, 2024</time></a></li>
                   </ul>
                 </div>
-                <h2 class="title"><a class="text-black" href="index.php?page=tintuc&split=hai">Bí Quyết Chọn Trang Sức Nam Phù Hợp Với Phong Cách Cá Nhân</a></h2>
+                <h2 class="title"><a class="text-black" href="index.php?page=tintuc&split=2">Bí Quyết Chọn Trang Sức Nam Phù Hợp Với Phong Cách Cá Nhân</a></h2>
               </article>
             </div>
             <div class="col-lg-4 col-md-6">
