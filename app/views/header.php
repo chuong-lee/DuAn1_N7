@@ -38,7 +38,7 @@
 </script>
 <header>
   <nav class="navbar navbar-expand-lg mx-lg-4">
-    <div class="container-fluid"><a class="navbar-brand" href="index.html"><img class="img-logo" src="./client/images/logo.png"/></a>
+    <div class="container-fluid"><a class="navbar-brand" href="index.php"><img class="img-logo" src="./client/images/logo.png"/></a>
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu" aria-controls="offcanvasNavbar" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       <div class="offcanvas offcanvas-start" id="menu" tabindex="-1" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
@@ -54,7 +54,7 @@
             </li>
             <li class="nav-item mx-lg-2"><a class="nav-link" href="index.php">Trang Chủ</a></li>
             <li class="nav-item mx-lg-2"><a class="nav-link" href="index.php?page=product">Sản Phẩm</a></li>
-            <li class="nav-item mx-lg-2"><a class="nav-link" href="index.php?page=tintu">Tin tức</a></li>
+            <li class="nav-item mx-lg-2"><a class="nav-link" href="index.php?page=tintuc">Tin tức</a></li>
             <li class="nav-item mx-lg-2"><a class="nav-link" href="index.php?page=gioithieu">Giới thiệu</a></li>
             <li class="nav-item mx-lg-2"><a class="nav-link" href="index.php?page=lienhe">Liên Hệ</a></li>
           </ul>
