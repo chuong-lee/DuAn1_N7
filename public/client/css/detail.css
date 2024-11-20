@@ -1,0 +1,156 @@
+.column {
+    width: 50%;
+    float: left;
+}
+
+.san-pham {
+    padding: 5px;
+    margin: 1px;
+    text-align: center;
+    position: relative;
+}
+
+.san-pham .ten {
+    font-size: larger;
+    font-variant: small-caps;
+    color: blue;
+}
+
+.san-pham img {
+    max-width: 95%;
+}
+
+.san-pham .gia {
+    color: red;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.san-pham .gia del {
+    color: gray;
+}
+
+.thong_tin_sp {
+    width: 50%;
+    float: left;
+}
+
+.custom-div {
+    width: 50%;
+
+}
+
+.gia {
+    color: red;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.gia del {
+    color: gray;
+}
+
+.product-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.product-title {
+    margin-bottom: 20px;
+    /* Khoảng cách giữa các sản phẩm */
+}
+
+.header {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.select-swap {
+    display: flex;
+}
+
+.sd {
+    margin-right: 10px;
+    /* Khoảng cách giữa các size */
+}
+
+.sd span {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #fff;
+    /* Màu nền của size */
+    border: 1px solid #ccc;
+    border: 1px solid #ccc;
+    /* Viền của size */
+    cursor: pointer;
+}
+
+.sd span:hover {
+    background-color: #fff;
+    /* Màu nền khi di chuột qua */
+    border: 1px solid #333;
+}
+
+
+.product-color {
+    margin-bottom: 20px;
+    /* Khoảng cách giữa các sản phẩm */
+}
+
+.header {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.color-swap {
+    display: flex;
+}
+
+.choose-color {
+    margin-right: 10px;
+    /* Khoảng cách giữa các màu sắc */
+}
+
+.btn-choose-size {
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    margin-top: 15px;
+
+}
+
+.btn-choose-size label {
+    display: block;
+    margin: 0;
+    padding: 0 7px;
+    background: #fff;
+    min-width: 32px;
+    height: 56px;
+    line-height: 56px;
+    position: relative;
+    border: 1px solid #ccc;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.btn-choose-size .size-list {
+    border: 1px solid #000;
+    color: #000;
+    font-weight: bold;
+}
+
+.btn-choose-size .size-list:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
