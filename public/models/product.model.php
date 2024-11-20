@@ -16,7 +16,7 @@ class ProductModel
 
     public function getDataByName($param)
     {
-        $sql = "select c.id as id_danhmuc, c.name as tendanhmuc, p.id as id_product, p2.name, p2.image, p2.sale_price, p2.buying, p2.price  
+        $sql = "select c.id as id_danhmuc, c.name as tendanhmuc, p2.id as id_product, p2.name, p2.image, p2.sale_price, p2.buying, p2.price  
         from category c 
         join productcategory p on p.id_cate = c.id
         join product p2 on p2.id = p.id_product
@@ -28,7 +28,7 @@ class ProductModel
 
     public function getProductByCate($param)
     {
-        $sql = "select c.id as id_danhmuc, c.name as tendanhmuc, p.id as id_product, p2.name, p2.image, p2.sale_price, p2.buying, p2.price  
+        $sql = "select c.id as id_danhmuc, c.name as tendanhmuc, p2.id as id_product, p2.name, p2.image, p2.sale_price, p2.buying, p2.price  
         from category c 
         join productcategory p on p.id_cate = c.id
         join product p2 on p2.id = p.id_product
@@ -40,7 +40,7 @@ class ProductModel
 
     public function getProductTrending()
     {
-        $sql = "select c.id as id_danhmuc, c.name as tendanhmuc, p.id as id_product, p2.name, p2.image, p2.sale_price, p2.buying, p2.price  
+        $sql = "select c.id as id_danhmuc, c.name as tendanhmuc, p2.id as id_product, p2.name, p2.image, p2.sale_price, p2.buying, p2.price  
         from category c 
         join productcategory p on p.id_cate = c.id
         join product p2 on p2.id = p.id_product
@@ -48,5 +48,21 @@ class ProductModel
         LIMIT 3";
         $result = $this->db->getAll($sql);
         return $result;
+    }
+
+    public function getProductDetail($id)
+    {
+        if ($id > 0) {
+            $sql = "select c.id as id_danhmuc, c.name as tendanhmuc, p2.id as id_product, p2.name , p2.image, p2.sale_price, p2.buying ,p2.price 
+            from category c 
+            join productcategory p on p.id_cate = c.id
+            join product p2 on p2.id = p.id_product
+            where p2.id =3
+            ";
+            $result = $this->db->getOne($sql);
+            return $result;
+        } else {
+            return null;
+        }
     }
 }

@@ -27,6 +27,21 @@ class ProductController{
             echo "Không tìm thấy sản phẩm.";
         }
     }
+
+    function detail() {
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+        }else{
+            $id = 0;
+        }
+        $detail = $this->productModel->getProductDetail($id);
+        if(is_array($detail)) {
+            $data['productDetail'] = $detail;
+            $this->renderView($data, 'chiTietSp');
+        }else{
+            echo "Không tìm thấy sản phẩm ";
+        }
+    }
 }
 
 ?>

@@ -38,7 +38,7 @@
 </script>
 <header>
   <nav class="navbar navbar-expand-lg mx-lg-4">
-    <div class="container-fluid"><a class="navbar-brand" href="index.php"><img class="img-logo" src="./client/images/logo.png"/></a>
+    <div class="container-fluid"><a class="navbar-brand" href="index.php"><img class="img-logo" src="../public/client/images/logo.png"/></a>
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu" aria-controls="offcanvasNavbar" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       <div class="offcanvas offcanvas-start" id="menu" tabindex="-1" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">

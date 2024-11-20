@@ -28,7 +28,7 @@
             <div class="col-md-3 col-lg-3 py-3 wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="0.3s">
                         <div class="card team-card hvr-float">
                         <div class="card-body">
-                    <div class="card-img w-100 justify-content-center team-banner"><img class="team-img" src="../public/client/images/danhmuc/' . $formattedName . '/' . $image . '"></div>
+                    <div class="card-img w-100 justify-content-center team-banner"><img class="team-img w-100" src="../public/client/images/danhmuc/' . $formattedName . '/' . $image . '"></div>
                     <div class="pt-2 text-start d-flex align-items-center"><i class="fa-solid fa-user"></i>
                         <p class="mb-0 mx-3">' . $buying . ' Buying</p>
                     </div>
@@ -42,7 +42,7 @@
                     <p class="ms-3 text-decoration-line-through mb-0">' . $sale_price . ' VNĐ</p>
                   </div>
                   <div class="align-items-center text-start mx-3 mb-2">
-                    <button class="btn btn-submit text-white" type="submit"><a href="trangChu.php?page=detailSale&id=' . $id_product . '">Mua ngay</a></button>
+                    <button class="btn btn-submit text-white" type="submit"><a href="index.php?page=chiTietSp&id=' . $id_product . '">Mua ngay</a></button>
                   </div>
                   </div>
                 </div>';
