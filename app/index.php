@@ -2,6 +2,8 @@
 require_once './controllers/home.controller.php';
 require_once './controllers/product.controller.php';
 require_once './controllers/UserController.php';
+require_once './controllers/news.controller.php';
+require_once './controllers/introduce.controller.php';
 require_once './views/header.php';
 require_once '../config/importModel.php';
 
@@ -21,6 +23,14 @@ if (isset($_GET['page'])) {
 
         case 'dangKy':
             $signin->addUser();
+            break;
+            
+        case 'tintuc':
+            $tintuc = new tintucController();
+            break;
+            
+        case 'gioithieu':
+            $gioithieu = new gioithieuController();
             break;
 
         default:
