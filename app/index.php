@@ -33,6 +33,11 @@ if (isset($_GET['page'])) {
             $gioithieu = new gioithieuController();
             break;
 
+        case 'thanhtoan':
+            $thanhtoan = new transaction();
+            $thanhtoan-> renderView();
+            break;
+
         default:
             $home = new HomeController();
             $home->getAll();
