@@ -35,7 +35,12 @@ if (isset($_GET['page'])) {
 
         case 'thanhtoan':
             $thanhtoan = new transaction();
-            $thanhtoan-> renderView();
+            $thanhtoan->renderView();
+            break;
+
+        case 'lienhe':
+            $contact = new ContactController();
+            $contact->renderView();
             break;
 
         default:
