@@ -7,22 +7,22 @@ class UserModel
         $this->db = new Database();
     }
     
-    public function getUser($username, $pass)
+    public function getUser($email, $pass)
     {
-        $sql = "select * from `user` u where email = '$username' and password = '$pass'";
+        $sql = "select * from `user` u where email = '$email' and password = '$pass'";
         return $this->db->getOne($sql);
     }
 
-    public function getUserByName($username)
+    public function getUserByName($email)
     {
-        $sql = "SELECT * FROM user where email = '$username'";
+        $sql = "SELECT * FROM user where email = '$email'";
         return $this->db->getOne($sql);
     }
 
     function insertUserForUser($data)
     {
-        $sql = "INSERT INTO user (name, phone, email, password) VALUES (?, ?, ?, ?)";
-        $param = [$data['name'], $data['phone'], $data['email'], $data['password']];
+        $sql = "insert  into  `user` (name, email, password, phone, address) values (?, ?, ?, ?, ?)";
+        $param = [$data['name'], $data['email'], $data['password'], $data['phone'],$data['address']];
         return $this->db->insert($sql, $param);
     }
 }

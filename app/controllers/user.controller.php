@@ -7,8 +7,12 @@ class UserController{
         $this->user = new UserModel();
     }
 
-    public function renderView($view)
+    public function renderView($view, $data = ['abc'])
     {
+        if(!empty($data)){
+            extract($data);
+            print_r($data);
+        }
         $viewPath = './views/content/' . $view . '.php';
         require_once $viewPath;
     }
@@ -38,25 +42,29 @@ class UserController{
     }
 
     public function addUser(){
-        $this->renderView('dangKy');
-        if(isset($_POST['add'])){
+        $messageError = '';
+        $this->renderView('dangKy',['messageError' => $messageError]);
+        if(isset($_POST['register'])){
             $data = [];
-            $data['ten'] = $_POST['ten'] ?? '';
+            $data['name'] = $_POST['name'] ?? '';
             $data['phone'] = $_POST['phone'] ?? '';
             $data['email'] = $_POST['email'] ?? '';
             $data['password'] = $_POST['password'] ?? '';
+            $data['address'] = $_POST['address'] ?? '';
             
             if ($this->user->getUserByName($data['email'])){
-                echo '<script>alert("Tên người dùng đã tồn tại. Vui lòng chọn tên khác.");</script>';
+                $messageError = 'Tài khoản đã được đăng ký';
+                // echo '<script>alert("Đăng kí that bau")</script>';
             } else {
-                if (!empty($data['ten']) && !empty($data['phone']) && !empty($data['email']) && !empty($data['password'])) {
+                if (!empty($data['name']) && !empty($data['phone']) && !empty($data['email']) && !empty($data['password'] && !empty($data['address']))) {
                     $this->user->insertUserForUser($data);
                     echo '<script>alert("Đăng kí thành công")</script>';
-                    echo '<script>location.href="index.php?page=signin";</script>';
+                    echo '<script>location.href="index.php?page=dangNhap";</script>';
                 } else {
                     echo "Tất cả các trường đều bắt buộc.";
                 }
             }
         }
+        $this->renderView('dangKy',['messageError' => $messageError]);
     }
 }
