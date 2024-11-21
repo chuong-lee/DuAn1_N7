@@ -4,10 +4,11 @@
       <div class="register-main py-5">
         <form class="form p-4" method="POST">
           <div class="mb-2 fw-bold form-title text-center">Dang ki</div>
-          <?php extract([[$messageError]]);
-          echo '
-          <div class="form-text text-center mb-3 text-danger" id="error-message-register">'.$messageError.'</div>
-          ' ?>
+          <?php if (!empty($messageError)): ?>
+    <div class="form-text text-center mb-3 text-danger" id="error-message-register">
+        <?= htmlspecialchars($messageError, ENT_QUOTES, 'UTF-8') ?>
+    </div>
+<?php endif; ?>
           <div class="input-group mb-3"><span class="input-group-text"><i class="fa-solid fa-user"></i></span>
             <input class="form-control" name="name" type="text" placeholder="Họ và Tên" aria-label="Username" required="">
           </div>

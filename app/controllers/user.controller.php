@@ -7,29 +7,29 @@ class UserController{
         $this->user = new UserModel();
     }
 
-    public function renderView($view, $data = ['abc'])
+    public function renderView($view)
     {
-        if(!empty($data)){
-            extract($data);
-            print_r($data);
-        }
         $viewPath = './views/content/' . $view . '.php';
         require_once $viewPath;
     }
     public function signinUser()
     {
         $this->renderView('dangNhap');
-        if (isset($_POST['sign'])) {
+        if (isset($_POST['login'])) {
             $username = $_POST['email'] ?? '';
             $password = $_POST['password'] ?? '';
-
+            $pattern = '/^[a-zA-Z0-9._%+-]+@gmail\.com$/';
             if (!empty($username) && !empty($password)) {
+                if(!preg_match($pattern, $username)){
+                    echo '<script>alert("'.$username.' không đúng định dạng email. Vui lòng nhập định dạng của email như: abc@gmail.com");</script>';
+                    return;
+                }
                 $user = $this->user->getUser($username, $password);
                 if ($user) {
-                    if ($user['role'] == 1) {
-                        header("Location: admin/index.php");
-                    } elseif ($user['role'] == 0) {
-                        header("Location: index.php");
+                    if ($user['id_role'] == 1) {
+                        echo '<script>location.href="indexAdmin.php";</script>';
+                    } elseif ($user['id_role'] == 2) {
+                        echo '<script>location.href="index.php";</script>';
                     }
                     exit();
                 } else {
@@ -42,29 +42,32 @@ class UserController{
     }
 
     public function addUser(){
-        $messageError = '';
-        $this->renderView('dangKy',['messageError' => $messageError]);
+        $this->renderView('dangKy');
         if(isset($_POST['register'])){
             $data = [];
             $data['name'] = $_POST['name'] ?? '';
             $data['phone'] = $_POST['phone'] ?? '';
             $data['email'] = $_POST['email'] ?? '';
             $data['password'] = $_POST['password'] ?? '';
+            $data['confirm-password'] = $_POST['confirm-password'] ?? '';
             $data['address'] = $_POST['address'] ?? '';
             
             if ($this->user->getUserByName($data['email'])){
-                $messageError = 'Tài khoản đã được đăng ký';
-                // echo '<script>alert("Đăng kí that bau")</script>';
+                echo '<script>alert("Tài khoản đã được đăng ký ")</script>';
             } else {
-                if (!empty($data['name']) && !empty($data['phone']) && !empty($data['email']) && !empty($data['password'] && !empty($data['address']))) {
-                    $this->user->insertUserForUser($data);
-                    echo '<script>alert("Đăng kí thành công")</script>';
-                    echo '<script>location.href="index.php?page=dangNhap";</script>';
+                if (!empty($data['name']) && !empty($data['phone']) && !empty($data['email']) && !empty($data['password'] && !empty($data['address']) && !empty($data['confirm-password']))) {
+                    if($data['confirm-password'] === $data['password']){
+                        $this->user->insertUserForUser($data);
+                        echo '<script>alert("Đăng kí thành công")</script>';
+                        echo '<script>location.href="index.php?page=dangNhap";</script>';
+                    }
+                    echo '<script>alert("Đăng kí thất bại")</script>';
                 } else {
                     echo "Tất cả các trường đều bắt buộc.";
                 }
             }
+            
         }
-        $this->renderView('dangKy',['messageError' => $messageError]);
+        
     }
 }
