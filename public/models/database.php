@@ -35,10 +35,17 @@ class Database{
         $this->stmt->execute($param);
         return $this->stmt;
     }
-    function getOne($sql){
-        $statement = $this->query($sql);
-        return $statement->fetch(PDO::FETCH_ASSOC);
+    public function getOne($sql) {
+        try {
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo "Query failed: " . $e->getMessage();
+            return false;
+        }
     }
+    
 
     function insert($sql, $param){
         $this->query($sql, $param);

@@ -26,7 +26,10 @@ if (isset($_GET['page'])) {
             break;
 
         case 'tintuc':
-            $tintuc = new tintucController();
+            $tintuc = new NewsController();
+            break;
+        case 'ctbaiviet':
+            $ctbaiviet = new DetailNewController();
             break;
 
         case 'gioithieu':
