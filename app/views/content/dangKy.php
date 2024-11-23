@@ -3,7 +3,7 @@
     <div class="register-form align-items-center d-flex w-100 h-100">
       <div class="register-main py-5">
         <form class="form p-4" method="POST">
-          <div class="mb-2 fw-bold form-title text-center">Dang ki</div>
+          <div class="mb-2 fw-bold form-title text-center">Đăng Kí </div>
           <?php extract([[$messageError]]);
           echo '
           <div class="form-text text-center mb-3 text-danger" id="error-message-register">'.$messageError.'</div>
