@@ -1,5 +1,5 @@
 <section>
-  <link rel="stylesheet" href="<?php echo '../public/client/css/trangChu.css'; ?>">
+  <link rel="stylesheet" href="<?php echo '../public/client/css/style.css'; ?>">
   <?php
   require_once 'banner.header.php';
 
