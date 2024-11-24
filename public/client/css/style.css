@@ -838,101 +838,136 @@ section .about .about-us .content {
 section .about .about-us .services .services-item .services-icon {
   color: #00FF00;
   margin-bottom: 20px; }
-.office {
-  color: #000;
+.profile-button {
+  background: rgb(99, 39, 120);
+  box-shadow: none;
+  border: none
 }
-.office section {
-  min-height: 100%;
+
+.profile-button:hover {
+  background: #682773
 }
-.office .menu {
-  width: 300px;
-  height: 100%;
+
+.profile-button:focus {
+  background: #682773;
+  box-shadow: none
 }
-.office .menu .offcanvas-header {
-  border-bottom: 4px solid;
+
+.profile-button:active {
+  background: #682773;
+  box-shadow: none
 }
-.office .menu .nav .nav-item .nav-link {
+
+.back:hover {
+  color: #682773;
+  cursor: pointer
+}
+
+.labels {
+  font-size: 11px
+}
+
+.add-experience:hover {
+  background: #BA68C8;
+  color: #fff;
+  cursor: pointer;
+  border: solid 1px #BA68C8
+}
+.form-container {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.form-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
+  margin: 0;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-input,
+.form-textarea,
+.form-select,
+.form-input-file {
+  font-size: 14px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.form-button {
   font-size: 16px;
-  width: 100%;
+  font-weight: bold;
+  padding: 10px 15px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  transition: background-color 0.3s ease;
 }
-.office .office-main {
-  width: 100%;
-  height: 100vh;
-  background: #fff;
-  overflow-y: scroll;
+
+.form-button:hover {
+  background-color: #0056b3;
 }
-.office .office-main .head-title {
-  border: 2px solid;
+.category-form-container {
   border-radius: 10px;
+  background-color: #ffffff;
 }
-.office .office-main .head-title .text-border {
-  border-left: 3px solid;
-  color: #323131;
+
+.category-form-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #28a745; /* Màu khác với form sản phẩm */
 }
-.office .office-main .head-title .nav-item .nav-link {
-  background: #fffffe;
-  color: #fff;
+
+.category-form-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
 }
-.office .office-main .head-title .nav-item .active {
-  background: #d9d9d9;
-  color: #000;
+
+.category-form-input,
+.category-form-textarea,
+.category-form-select {
+  font-size: 14px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
-.office .office-main .head-bg {
-  background: #fffffe;
+
+.category-form-input:focus,
+.category-form-textarea:focus,
+.category-form-select:focus {
+  outline: none;
+  border-color: #28a745;
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
 }
-.office .office-main .head-bg .text-border {
-  border-left: 3px solid #fff;
-  color: #fff;
+
+.category-form-button {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 15px;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  transition: background-color 0.3s ease;
 }
-.office .office-main .phase-tags {
-  background: #000;
-  border-radius: 20px;
-}
-.office .office-main .phase-tags .nav-item .nav-link {
-  color: #fffffe;
-}
-.office .office-main .phase-tags .nav-item .active {
-  background: #fffffe;
-  color: #fffffe;
-}
-.office .office-main .phase-block {
-  border-radius: 20px;
-  border: 3px solid #000;
-}
-.office .office-main .phase-block .phase-head {
-  border-radius: 15px 15px 0 0;
-  background: #000;
-  color: #fffffe;
-  font-size: 20px;
-}
-.office .office-main .phase-block .phase-content {
-  border-radius: 0 0 15px 51px;
-  color: black;
-}
-.office .office-main .btn-check:checked + .btn, .office .office-main .btn.active, .office .office-main .btn.show, .office .office-main .btn:first-child:active, .office .office-main :not(.btn-check) + .btn:active {
-  background: #fffffe;
-  color: #fffffe;
-  border-color: #fffffe;
-}
-.office .office-main .btn-start:hover {
-  border-color: #fffffe;
-}
-.office .office-main .card {
-  border: 2px solid #fffffe;
-  background-color: #f2f2f2;
-  font-family: Arial;
-}
-.office .office-main .total-row {
-  background: #fffffe;
-  color: black;
-}
-.office .office-main .pay-method .method-block {
-  background: #fffffe;
-  border-radius: 10px;
-}
-.office .office-main .pay-method .method-block .method-title {
-  border-bottom: 1px solid #fff;
-}
-.office .office-main .pay-method .method-block .method-img {
-  height: 50px;
+
+.category-form-button:hover {
+  background-color: #218838;
 }
