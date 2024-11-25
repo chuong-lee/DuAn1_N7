@@ -29,7 +29,14 @@ button:focus:not(:focus-visible) {
   background: #DF6951; }
   .btn-submit:hover {
     background: #20bfe1; }
-
+.btn-primari {
+  background-color: #0BB94E;
+  color: #ffffff;
+  &:hover{
+    background-color:#f7a422 ;
+    color: #ffffff;
+  }
+}
 .btn-buy {
   border: 1px solid #DDDDDD;
   border-radius: 8px;
@@ -838,6 +845,9 @@ section .about .about-us .content {
 section .about .about-us .services .services-item .services-icon {
   color: #00FF00;
   margin-bottom: 20px; }
+.bg-profile{
+  background: url(../images/bg-profile.jpg);
+}
 .profile-button {
   background: rgb(99, 39, 120);
   box-shadow: none;
@@ -845,23 +855,26 @@ section .about .about-us .services .services-item .services-icon {
 }
 
 .profile-button:hover {
-  background: #682773
+  background: #BA68C8
 }
 
-.profile-button:focus {
-  background: #682773;
-  box-shadow: none
-}
-
-.profile-button:active {
-  background: #682773;
-  box-shadow: none
-}
 
 .back:hover {
   color: #682773;
   cursor: pointer
 }
+
+.labels {
+  font-size: 11px
+}
+
+.add-experience:hover {
+  background: #BA68C8;
+  color: #fff;
+  cursor: pointer;
+  border: solid 1px #BA68C8
+}/*# sourceMappingURL=style.css.map */
+
 
 .labels {
   font-size: 11px

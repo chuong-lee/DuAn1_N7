@@ -1,4 +1,3 @@
-<!-- Page Wrapper -->
 <div id="wrapper">
 
     <!-- Sidebar -->
@@ -509,4 +508,3 @@
     </div>
 
 </div>
-<!-- End of Page Wrapper -->

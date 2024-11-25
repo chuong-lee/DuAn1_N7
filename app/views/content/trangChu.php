@@ -85,7 +85,7 @@
             $formattedName = str_replace(' ', '', $tendanhmuc);
             echo '<div class="col-lg-3 col-md-4 col-sm-6">
             <div class="featured-item mb-4">
-              <div class="featured-item-pic set-bg" data-setbg><img src="../public/client/images/danhmuc/' . $formattedName . '/' . $image . '">
+              <div class="featured-item-pic set-bg" data-setbg><img class="w-100" src="../public/client/images/danhmuc/' . $formattedName . '/' . $image . '">
                 <ul class="featured-item-pic-hover">
                   <li class="featured-item-list"><a href="#"><i class="fa fa-heart"></i></a></li>
                   <li class="featured-item-list"><a href="#"><i class="fa fa-retweet"></i></a></li>
