@@ -15,9 +15,10 @@
                 <div class="mainsp">
                     <div class="spsp1">
                         <a href="index.php?page=ctbaiviet&id='.$value['id'].'"></a>
-                        <p>Tác giả: '.$value['author'].'</p>
-                        <div class="ten"><a href="index.php?page=ctbaiviet&id='.$value['id'].'">'.$value['name'].'</a></div>
-                        <p>Lược Xem: '.$value['view'].'</p>
+                        <h6>Tác giả: '.$value['author'].'</h6>
+                         <a href="index.php?page=ctbaiviet&id='.$value['id'].'"><img src="../public/client/images/post'.$value['id'].'.jpg" alt="post'.$value['id'].'" width="450" height="150" ></a>
+                        <div class="ten"><a href="index.php?page=ctbaiviet&id='.$value['id'].'">'.$value['title'].'</a></div>
+                        <h6>Ngày xuất bản: '.$value['created_at'].'</h6>
                     </div>
                 </div>
                 ';

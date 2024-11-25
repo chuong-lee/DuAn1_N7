@@ -3,7 +3,7 @@ class NewsModel{
     public $mangsp;
     public function dssp(){
     $sp =new Database();
-    $sql ="SELECT * from news";
+    $sql ="SELECT * from post";
     $this->mangsp= $sp->getAll($sql); 
     }
 

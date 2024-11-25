@@ -8,25 +8,24 @@
                 </ol>
                 <div class="row gy-5">
                     <div class="col-lg-4 col-md-6">
-                        <?php
-                        if (!empty($sp->onesp)) {
-                            $value = $sp->onesp[0]; 
+                    <?php
+                        if (!empty($article)) {
+                            // Thay thế các tiêu đề phụ bắt đầu bằng '##' với thẻ <strong> để in đậm
+                            $content = nl2br($article['content']); // Chuyển các xuống dòng thành <br>
+
+                            // Ví dụ: Tìm tất cả các tiêu đề phụ bắt đầu bằng '##' và bao bọc chúng trong <strong>
+                            $content = preg_replace('/^## (.*?)$/m', '<strong>$1</strong>', $content);
 
                             echo '
-                            <div class="mainsp">
-                                <div class="spsp1">
-                                    <a href="index.php?page=ctbaiviet&id=' . $value['id'] . '">
-                                        <p>Tác giả: ' . ($value['author']) . '</p>
-                                        <div class="ten">' . ($value['name']) . '</div>
-                                        <p>Nội dung: ' . ($value['content']) . '</p>
-                                        <p>Lượt Xem: ' . (int)$value['view'] . '</p>
-                                    </a>
-                                </div>
-                            </div>';
+                                <p>Tác giả: ' . $article['author'] . '</p>
+                                <div>' . $article['title'] . '</div>
+                                <p>Nội dung: ' . $content . '</p>
+                                <p>Lượt Xem: ' . (int)$article['views'] . '</p>
+                            ';
                         } else {
                             echo '<p>Không có bài viết nào để hiển thị.</p>';
                         }
-                        ?>
+                    ?>
                     </div>
                 </div>
             </div>
