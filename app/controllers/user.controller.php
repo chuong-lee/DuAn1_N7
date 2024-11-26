@@ -26,6 +26,7 @@ class UserController{
                 }
                 $user = $this->user->getUser($username, $password);
                 if ($user) {
+                    echo '<script>sessionStorage.setItem("userId", "'.$user['id'].'");</script>';
                     if ($user['id_role'] == 1) {
                         echo '<script>location.href="indexAdmin.php";</script>';
                     } elseif ($user['id_role'] == 2) {
