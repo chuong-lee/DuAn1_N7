@@ -77,7 +77,7 @@
         </div>
 
         <div class="huong-dan">
-          <a href="./gioHang.html" class="btn-choose-size">
+          <a href="index.php?page=gioHang" class="btn-choose-size">
             <label class="size-list" style="">
               <span>Thêm giỏ hàng</span>
             </label></a>
