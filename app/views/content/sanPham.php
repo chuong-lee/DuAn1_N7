@@ -5,14 +5,18 @@
       <div class="tab-pane fade w-100" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="1">
         <ul class="nav nav-pills my-4 btn-class nav-justified rounded-4 product-tags" role="tablist">
           <?php
-          $listCate = $data['dsdm'];
-          foreach ($listCate as $cate) {
-            // print_r($cate);
-            extract($cate);
-            echo '<li class="nav-item" role="presentation">
-                <button class="nav-link py-lg-3 active" data-bs-toggle="pill" data-bs-target="#referral" type="button" onclick="handleClickCate(' . $id . ')" role="tab" aria-selected="true">' . $name . '</button>
-              </li>';
-          }
+              $listCate = $data['dsdm'];
+              foreach ($listCate as $cate) {
+                // print_r($cate);
+                extract($cate);
+                echo
+                    '
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link py-lg-3 active " data-bs-toggle="pill" data-bs-target="#referral" type="button" onclick="handleClickCate(' . $id . ')" role="tab" aria-selected="true">' . $name . '</button>
+                        </li>
+                      '
+                ;
+              }
           ?>
 
       </div>
@@ -38,47 +42,41 @@
                 <?php
                 $listProducts = $data['products'];
                 foreach ($listProducts as $product) {
-                  print_r($product);
+//                  print_r($product);
                   extract($product);
                   $formattedName = str_replace(' ', '', $tendanhmuc);
                   $salePercent = (($price - $sale_price) / $price) * 100;
                   $ceiled = ceil($salePercent);
                   echo '
-              <form class="form p-4" method="POST">
-                <div class="col p-3">
-                  <div class="product-item">
-                    <figure><a href="" title="Product Title"><img class="card-img-topimg w-100" src="../public/client/images/danhmuc/' . $formattedName . '/' . $image . '"></a></figure>
-                    <div class="d-flex flex-column text-center">
-                      <h3 class="fs-6 fw-normal">' . $name . '</h3>
-                      <div><span class="rating d-flex justify-content-center">
-                          <div class="text-warning" width="18" height="18"><i class="fa-solid fa-star"></i></div>
-                          <div class="text-warning" width="18" height="18"><i class="fa-solid fa-star"></i></div>
-                          <div class="text-warning" width="18" height="18"><i class="fa-solid fa-star"></i></div>
-                          <div class="text-warning" width="18" height="18"><i class="fa-solid fa-star"></i></div>
-                          <div class="text-warning" width="18" height="18"><i class="fa-solid fa-star"></i></div>
-                        </span><span>(41)</span></div>
-                      <div class="d-flex justify-content-center align-items-center gap-2">
-                        <del>' . $price . '</del><span class="text-dark fw-semibold">' . $sale_price . '</span><span class="badge border border-dark-subtle rounded-0 fw-normal px-1 fs-7 lh-1 text-body-tertiary">' . $ceiled . '% OFF</span>
-                      </div>
-                      <div class="button-area">
-                        <div class="row g-1 mt-2">
-                          <div class="col-3">
-                            <input class="form-controll border-dark-subtle input-number quantity" type="number" name="quantity" value="1">
+                    <div class="col p-3" method="POST">
+                      <div class="product-item">
+                        <figure><a href="" title="Product Title"><img class="card-img-topimg w-100" src="../public/client/images/danhmuc/' . $formattedName . '/' . $image . '"></a></figure>
+                        <div class="d-flex flex-column text-center">
+                          <h3 class="fs-6 fw-normal">' . $name . '</h3>
+                          <div><span class="rating d-flex justify-content-center">
+                              <div class="text-warning" width="18" height="18"><i class="fa-solid fa-star"></i></div>
+                              <div class="text-warning" width="18" height="18"><i class="fa-solid fa-star"></i></div>
+                              <div class="text-warning" width="18" height="18"><i class="fa-solid fa-star"></i></div>
+                              <div class="text-warning" width="18" height="18"><i class="fa-solid fa-star"></i></div>
+                              <div class="text-warning" width="18" height="18"><i class="fa-solid fa-star"></i></div>
+                            </span><span>(41)</span></div>
+                          <div class="d-flex justify-content-center align-items-center gap-2">
+                            <del>' . $price . '</del><span class="text-dark fw-semibold">' . $sale_price . '</span><span class="badge border border-dark-subtle rounded-0 fw-normal px-1 fs-7 lh-1 text-body-tertiary">' . $ceiled . '% OFF</span>
                           </div>
-
-                          <div class="col-7"><button type="submit" name="addProductToCart"">Thêm vào giỏ hàng</button></div>
-                          <div class="col-2"><a class="btn btn-outline-dark rounded-1 p-2 fs-6" href="#"><i class="fa-solid fa-heart"></i></a></div>
+                          <div class="button-area">
+                            <div class="row g-1 mt-2">
+                              <div class="col-3">
+                                <input class="form-controll border-dark-subtle input-number quantity p-3" type="number" name="quantity" value="1">
+                              </div>
+                              <div class="col-7"><button type="submit" name="addProductToCart"">Thêm vào giỏ hàng</button></div>
+                              <div class="col-2"><a class="btn btn-outline-dark rounded-1 p-3 fs-6" href="#"><i class="fa-solid fa-heart"></i></a></div>
+                            </div>
+                          </div>                         
                         </div>
                       </div>
-                      <input type="text" value="' . $id_product . '" name="id_product">
-                      <input type="text" value=" ' . $id_product . '" name="quantity">
-                      <input type="text" value=" ' . $sale_price . '" name="price">
-                      <input type="text" value="" class="user-id" name="id_user">
                     </div>
-                  </div>
-                </div>
-              </form>';
-                }
+                  ';
+                    }
                 ?>
                 <!-- 
 Tạo ra button có hành động onclick được gán tên hàm handleAddProduct
