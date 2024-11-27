@@ -225,5 +225,5 @@
   }
 </script>
 <?php
-require_once '../public/link.php';
+require_once '../public/footer.php';
 ?>
