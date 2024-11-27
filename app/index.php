@@ -5,6 +5,7 @@ require_once '../config/importController.php';
 
 $productController = new ProductController();
 $signin = new UserController();
+$cartDetail = new CartController();
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
 
@@ -44,6 +45,19 @@ if (isset($_GET['page'])) {
         case 'lienhe':
             $contact = new ContactController();
             $contact->renderView();
+            break;
+
+        case 'sanPham':
+            $productController->getProductByCategory();
+            $productController->addProductToCart();
+            break;
+
+        case 'gioHang':
+            $cartDetail->getProductToCart();
+            break;
+
+        case 'delProductInCart':
+            $cartDetail->deleteProductInCart();
             break;
 
         default:
