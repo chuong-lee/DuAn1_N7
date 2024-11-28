@@ -225,4 +225,5 @@
   }
 </script>
 <?php
+require_once '../public/footer.php';
 ?>
