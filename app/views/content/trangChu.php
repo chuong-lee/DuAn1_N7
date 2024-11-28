@@ -225,5 +225,4 @@
   }
 </script>
 <?php
-require_once '../public/link.php';
 ?>
