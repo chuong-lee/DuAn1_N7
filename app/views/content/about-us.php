@@ -54,7 +54,7 @@
                     </div>
                     <div class="col-lg-5 wow bounceInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: bounceInUp;">
                         <div class="video">
-                            <button class="btn btn-play"><img class="img-fluid rounded" src="client/images/product-love-1.png"></button>
+                            <button class="btn btn-play"><img class="img-fluid rounded" src="../public/client/images/product-love-1.png"></button>
                         </div>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
             <div class="container">
                 <div class="responsive">
                     <div class="px-0 wow flipInX" data-wow-delay="0.5s" data-wow-duration="0.9s">
-                        <div class="we-did-block"><img class="w-100" src="client/images/blog-1.png" alt="...">
+                        <div class="we-did-block"><img class="w-100" src="../public/client/images/blog-1.png" alt="...">
                             <div class="we-did-content">
                                 <div class="w-100 text-center">
                                     <div class="h6 text-center mb-3">Traditional advertisins<br>does not work well anymore.</div>
@@ -74,7 +74,7 @@
                         </div>
                     </div>
                     <div class="px-0 wow flipInX" data-wow-delay="0.5s" data-wow-duration="0.9s">
-                        <div class="we-did-block"><img class="w-100" src="client/images/blog-1.png" alt="...">
+                        <div class="we-did-block"><img class="w-100" src="../public/client/images/blog-1.png" alt="...">
                             <div class="we-did-content">
                                 <div class="w-100 text-center">
                                     <div class="h6 text-center mb-3">Traditional advertisins<br>does not work well anymore.</div>
@@ -84,7 +84,7 @@
                         </div>
                     </div>
                     <div class="px-0 wow flipInX" data-wow-delay="0.5s" data-wow-duration="0.9s">
-                        <div class="we-did-block"><img class="w-100" src="client/images/blog-1.png" alt="...">
+                        <div class="we-did-block"><img class="w-100" src="../public/client/images/blog-1.png" alt="...">
                             <div class="we-did-content">
                                 <div class="w-100 text-center">
                                     <div class="h6 text-center mb-3">Traditional advertisins<br>does not work well anymore.</div>
@@ -94,7 +94,7 @@
                         </div>
                     </div>
                     <div class="px-0 wow flipInX" data-wow-delay="0.5s" data-wow-duration="0.9s">
-                        <div class="we-did-block"><img class="w-100" src="client/images/blog-1.png" alt="...">
+                        <div class="we-did-block"><img class="w-100" src="../public/client/images/blog-1.png" alt="...">
                             <div class="we-did-content">
                                 <div class="w-100 text-center">
                                     <div class="h6 text-center mb-3">Traditional advertisins<br>does not work well anymore.</div>
@@ -104,7 +104,7 @@
                         </div>
                     </div>
                     <div class="px-0 wow flipInX" data-wow-delay="0.5s" data-wow-duration="0.9s">
-                        <div class="we-did-block"><img class="w-100" src="client/images/blog-1.png" alt="...">
+                        <div class="we-did-block"><img class="w-100" src="../public/client/images/blog-1.png" alt="...">
                             <div class="we-did-content">
                                 <div class="w-100 text-center">
                                     <div class="h6 text-center mb-3">Traditional advertisins<br>does not work well anymore.</div>
@@ -114,7 +114,7 @@
                         </div>
                     </div>
                     <div class="px-0 wow flipInX" data-wow-delay="0.5s" data-wow-duration="0.9s">
-                        <div class="we-did-block"><img class="w-100" src="client/images/blog-1.png" alt="...">
+                        <div class="we-did-block"><img class="w-100" src="../public/client/images/blog-1.png" alt="...">
                             <div class="we-did-content">
                                 <div class="w-100 text-center">
                                     <div class="h6 text-center mb-3">Traditional advertisins<br>does not work well anymore.</div>
@@ -124,7 +124,7 @@
                         </div>
                     </div>
                     <div class="px-0 wow flipInX" data-wow-delay="0.5s" data-wow-duration="0.9s">
-                        <div class="we-did-block"><img class="w-100" src="client/images/blog-1.png" alt="...">
+                        <div class="we-did-block"><img class="w-100" src="../public/client/images/blog-1.png" alt="...">
                             <div class="we-did-content">
                                 <div class="w-100 text-center">
                                     <div class="h6 text-center mb-3">Traditional advertisins<br>does not work well anymore.</div>
@@ -134,7 +134,7 @@
                         </div>
                     </div>
                     <div class="px-0 wow flipInX" data-wow-delay="0.5s" data-wow-duration="0.9s">
-                        <div class="we-did-block"><img class="w-100" src="client/images/blog-1.png" alt="...">
+                        <div class="we-did-block"><img class="w-100" src="../public/client/images/blog-1.png" alt="...">
                             <div class="we-did-content">
                                 <div class="w-100 text-center">
                                     <div class="h6 text-center mb-3">Traditional advertisins<br>does not work well anymore.</div>
