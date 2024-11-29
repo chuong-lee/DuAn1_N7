@@ -86,6 +86,15 @@ class ProductController
             $data['id_user'] = $_POST['id_user'] ?? '';
             $data['id_product'] = $_POST['id_product'] ?? '';
             if (!empty($data['id_product']) && !empty($data['id_user'])) {
+                if (is_array($_POST['id_product'])) {
+                    // Đếm số lần xuất hiện của id_product trong mảng
+                    $productCount = array_count_values($_POST['id_product']);
+                    // Gán quantity bằng số lần xuất hiện của id_product
+                    $data['quantity'] = $productCount[$data['id_product']] ?? 0;
+                } else {
+                    // Nếu id_product không phải là mảng, chỉ định quantity là 1
+                    $data['quantity'] = 1;
+                }
                 $this->cartModel->insertProductToCart($data);
                 echo '<script>alert("Thêm sản phẩm thành công")</script>';
             } else {
