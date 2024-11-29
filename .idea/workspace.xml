@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98e47878-96be-4fdb-8cbd-9e61155f177d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/cards.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/cards.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/charts.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/charts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/new-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/new-product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/tables.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/tables.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/content/about-us.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/content/about-us.php" afterDir="false" />
-    </list>
+    <list default="true" id="98e47878-96be-4fdb-8cbd-9e61155f177d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,6 +16,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "minhlt246"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/chuong-lee/DuAn1_N7.git",
+    "accountId": "0b95cb29-af3f-4b73-a120-6f4b4ae1d745"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -86,6 +86,7 @@
       <workItem from="1732596416337" duration="6696000" />
       <workItem from="1732675814533" duration="14044000" />
       <workItem from="1732767520106" duration="334000" />
+      <workItem from="1732810822713" duration="1024000" />
     </task>
     <servers />
   </component>
