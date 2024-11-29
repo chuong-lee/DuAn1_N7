@@ -42,8 +42,8 @@ require_once 'banner.header.php';
                                 <!-- <input type="text" placeholder="Apartment, suite, unite ect (optinal)">-->
                             </div>
                             <div class="checkout-input">
-                                <label>Tỉnh/Thành phố ;<span>*</span></label>
-                                <select name="province" required>
+                                <label for="province">Tỉnh/Thành phố ;<span>*</span></label>
+                                <select id="province" name="province" required>
                                     <option value="" hidden>Chọn thành phố</option>
                                     <option value="An Giang">An Giang</option>
                                     <option value="Bà Rịa-Vũng Tàu">Bà Rịa-Vũng Tàu</option>
@@ -111,14 +111,14 @@ require_once 'banner.header.php';
                                 </select>
                             </div>
                             <div class="checkout-input">
-                                <label>Quận/Huyện;<span>*</span></label>
-                                <select required="" name="district">
+                                <label for="district">Quận/Huyện;<span>*</span></label>
+                                <select id="district" required="" name="district">
                                     <option hidden="">Chọn Quận/Huyện</option>
                                 </select>
                             </div>
                             <div class="checkout-input">
                                 <p>Phường/Xã;<span>*</span></p>
-                                <select required="" name="ward">
+                                <select id="ward"  for="ward" required="" name="ward">
                                     <option value="" hidden="">Chọn Phường/Xã;</option>
                                 </select>
                             </div>
