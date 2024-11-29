@@ -57,8 +57,7 @@ class ProductModel
             from category c 
             join productcategory p on p.id_cate = c.id
             join product p2 on p2.id = p.id_product
-            where p2.id =3
-            ";
+            where p2.id = " . $id;
             $result = $this->db->getOne($sql);
             return $result;
         } else {

@@ -13,6 +13,12 @@ class UserModel
         return $this->db->getOne($sql);
     }
 
+    public function getUserById($userId)
+    {
+        $sql = "select * from `user` u where u.id = " . $userId;
+        return $this->db->getOne($sql);
+    }
+
     public function getUserByName($email)
     {
         $sql = "SELECT * FROM user where email = '$email'";

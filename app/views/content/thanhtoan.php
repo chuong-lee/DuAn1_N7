@@ -192,6 +192,4 @@ require_once 'banner.header.php';
     }
 
 </script>
-<?php
-require_once '../public/link.php';
-?>
+

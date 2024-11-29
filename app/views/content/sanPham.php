@@ -38,13 +38,13 @@
                 <?php
                 $listProducts = $data['products'];
                 foreach ($listProducts as $product) {
-                  print_r($product);
+                  // print_r($product);
                   extract($product);
                   $formattedName = str_replace(' ', '', $tendanhmuc);
                   $salePercent = (($price - $sale_price) / $price) * 100;
                   $ceiled = ceil($salePercent);
                   echo '
-              <form class="form p-4" method="POST">
+              <form method="POST">
                 <div class="col p-3">
                   <div class="product-item">
                     <figure><a href="" title="Product Title"><img class="card-img-topimg w-100" src="../public/client/images/danhmuc/' . $formattedName . '/' . $image . '"></a></figure>
@@ -70,10 +70,8 @@
                           <div class="col-2"><a class="btn btn-outline-dark rounded-1 p-2 fs-6" href="#"><i class="fa-solid fa-heart"></i></a></div>
                         </div>
                       </div>
-                      <input type="text" value="' . $id_product . '" name="id_product">
-                      <input type="text" value=" ' . $id_product . '" name="quantity">
-                      <input type="text" value=" ' . $sale_price . '" name="price">
-                      <input type="text" value="" class="user-id" name="id_user">
+                      <input type="hidden" value="' . $id_product . '" name="id_product">
+                      <input type="hidden" value="" class="user-id" name="id_user">
                     </div>
                   </div>
                 </div>
@@ -107,14 +105,14 @@ show dữ liệu theo dữ liệu trong mảng
 
   }
 
-  const userId = sessionStorage.getItem('userId');
-  if (userId) {
+  const userIds = sessionStorage.getItem('userId');
+  if (userIds) {
     // Lấy tất cả các thẻ input có class "user-id"
     const inputs = document.querySelectorAll(".user-id");
 
     // Gán userId vào từng thẻ input
     inputs.forEach(input => {
-        input.value = userId;
+        input.value = userIds;
     });
 } else {
     console.log("Không tìm thấy userId");
