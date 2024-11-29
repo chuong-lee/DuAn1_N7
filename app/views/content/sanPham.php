@@ -42,26 +42,32 @@
                 <?php
                 $listProducts = $data['products'];
                 foreach ($listProducts as $product) {
-//                  print_r($product);
+                  // print_r($product);
                   extract($product);
                   $formattedName = str_replace(' ', '', $tendanhmuc);
                   $salePercent = (($price - $sale_price) / $price) * 100;
                   $ceiled = ceil($salePercent);
                   echo '
-                    <div class="col p-3" method="POST">
-                      <div class="product-item">
-                        <figure><a href="" title="Product Title"><img class="card-img-topimg w-100" src="../public/client/images/danhmuc/' . $formattedName . '/' . $image . '"></a></figure>
-                        <div class="d-flex flex-column text-center">
-                          <h3 class="fs-6 fw-normal">' . $name . '</h3>
-                          <div><span class="rating d-flex justify-content-center">
-                              <div class="text-warning" width="18" height="18"><i class="fa-solid fa-star"></i></div>
-                              <div class="text-warning" width="18" height="18"><i class="fa-solid fa-star"></i></div>
-                              <div class="text-warning" width="18" height="18"><i class="fa-solid fa-star"></i></div>
-                              <div class="text-warning" width="18" height="18"><i class="fa-solid fa-star"></i></div>
-                              <div class="text-warning" width="18" height="18"><i class="fa-solid fa-star"></i></div>
-                            </span><span>(41)</span></div>
-                          <div class="d-flex justify-content-center align-items-center gap-2">
-                            <del>' . $price . '</del><span class="text-dark fw-semibold">' . $sale_price . '</span><span class="badge border border-dark-subtle rounded-0 fw-normal px-1 fs-7 lh-1 text-body-tertiary">' . $ceiled . '% OFF</span>
+              <form method="POST">
+                <div class="col p-3">
+                  <div class="product-item">
+                    <figure><a href="" title="Product Title"><img class="card-img-topimg w-100" src="../public/client/images/danhmuc/' . $formattedName . '/' . $image . '"></a></figure>
+                    <div class="d-flex flex-column text-center">
+                      <h3 class="fs-6 fw-normal">' . $name . '</h3>
+                      <div><span class="rating d-flex justify-content-center">
+                          <div class="text-warning" width="18" height="18"><i class="fa-solid fa-star"></i></div>
+                          <div class="text-warning" width="18" height="18"><i class="fa-solid fa-star"></i></div>
+                          <div class="text-warning" width="18" height="18"><i class="fa-solid fa-star"></i></div>
+                          <div class="text-warning" width="18" height="18"><i class="fa-solid fa-star"></i></div>
+                          <div class="text-warning" width="18" height="18"><i class="fa-solid fa-star"></i></div>
+                        </span><span>(41)</span></div>
+                      <div class="d-flex justify-content-center align-items-center gap-2">
+                        <del>' . $price . '</del><span class="text-dark fw-semibold">' . $sale_price . '</span><span class="badge border border-dark-subtle rounded-0 fw-normal px-1 fs-7 lh-1 text-body-tertiary">' . $ceiled . '% OFF</span>
+                      </div>
+                      <div class="button-area">
+                        <div class="row g-1 mt-2">
+                          <div class="col-3">
+                            <input class="form-controll border-dark-subtle input-number quantity" type="number" name="quantity" value="1">
                           </div>
                           <div class="button-area">
                             <div class="row g-1 mt-2">
@@ -74,6 +80,8 @@
                           </div>                         
                         </div>
                       </div>
+                      <input type="hidden" value="' . $id_product . '" name="id_product">
+                      <input type="hidden" value="" class="user-id" name="id_user">
                     </div>
                   ';
                     }
@@ -105,14 +113,14 @@ show dữ liệu theo dữ liệu trong mảng
 
   }
 
-  const userId = sessionStorage.getItem('userId');
-  if (userId) {
+  const userIds = sessionStorage.getItem('userId');
+  if (userIds) {
     // Lấy tất cả các thẻ input có class "user-id"
     const inputs = document.querySelectorAll(".user-id");
 
     // Gán userId vào từng thẻ input
     inputs.forEach(input => {
-        input.value = userId;
+        input.value = userIds;
     });
 } else {
     console.log("Không tìm thấy userId");

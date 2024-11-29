@@ -21,23 +21,25 @@ class CartController{
     }
 
     function getProductToCart(){
-        $userId= 4;
-        $cartProduct= $this->cartModel->getProductByIdUser($userId); 
-        if(!empty($cartProduct)){
-            $data['cartProduct'] = $cartProduct;
-            $this->renderView($data, 'gioHang');
-        }else{
-            $data['cartProduct'] = $cartProduct;
-            $this->renderView($data, 'gioHang');
-            echo  'Không có sản phẩm trong giỏ hàng';
+        if(isset($_GET['userId'])){
+            $userId = $_GET['userId'];
+            $cartProduct= $this->cartModel->getProductByIdUser($userId); 
+            if(!empty($cartProduct)){
+                $data['cartProduct'] = $cartProduct;
+                $this->renderView($data, 'gioHang');
+            }else{
+                echo  'Không có sản phẩm trong giỏ hàng';
+            }
         }
+        
     }
 
     function deleteProductInCart(){
-        if(isset($_GET['id_product'])&&($_GET['id_product'])> 0){
+        if(isset($_GET['id_product'])&&($_GET['id_product'])> 0 && isset($_GET['userId'])){
             $productId = $_GET['id_product'];
+            $userId = $_GET['userId'];
             $this->cartModel->deleteProductInCart($productId);
-            echo'<script>location.href="index.php?page=gioHang";</script>';
+            echo'<script>location.href="index.php?page=gioHang&userId='.$userId.'";</script>'; 
         }
     }
 }

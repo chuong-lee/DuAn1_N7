@@ -83,23 +83,15 @@ class ProductController
     function addProductToCart(){
         if(isset($_POST['addProductToCart'])){
             $data = [];
-            $data['id_product'] = $_POST['id_product'] ?? '';
-            $data['quantity'] = $_POST['quantity'] ?? '';
-            $data['price'] = $_POST['price'] ?? '';
             $data['id_user'] = $_POST['id_user'] ?? '';
-
-            if (!empty($data['id_product']) && !empty($data['quantity']) && !empty($data['price']) && !empty($data['id_user'])) {
+            $data['id_product'] = $_POST['id_product'] ?? '';
+            if (!empty($data['id_product']) && !empty($data['id_user'])) {
                 $this->cartModel->insertProductToCart($data);
                 echo '<script>alert("Thêm sản phẩm thành công")</script>';
             } else {
-                echo '<script>alert("Tất cả các trường đều bắt buộc")</script>';
+                echo '<script>location.href="index.php?page=dangNhap";</script>';
             }
         }
     }
- 
-    function renderGioHang()
-    {
-        $data['gioHang'] = null;
-        $this->renderView($data, 'gioHang');
-    }
+
 }
