@@ -26,7 +26,11 @@ class UserController{
                 }
                 $user = $this->user->getUser($username, $password);
                 if ($user) {
-                    echo '<script>sessionStorage.setItem("userId", "'.$user['id'].'");</script>';
+                    echo '<script>
+                    sessionStorage.setItem("userId", "'.$user['id'].'");
+                    sessionStorage.setItem("name", "'.$user['name'].'");
+                    
+                    </script>';
                     if ($user['id_role'] == 1) {
                         echo '<script>location.href="indexAdmin.php";</script>';
                     } elseif ($user['id_role'] == 2) {
@@ -70,5 +74,16 @@ class UserController{
             
         }
         
+    }
+
+    public function getUserById(){
+        $userId = 4;
+        $userDetail = $this->user->getUserById($userId);
+        if($userDetail){
+            $data['userDetail'] =$userDetail;
+            $this->renderView($data, 'header');
+        }else{
+            echo '<script>location.href="index.php?page=dangNhap";</script>';
+        }
     }
 }

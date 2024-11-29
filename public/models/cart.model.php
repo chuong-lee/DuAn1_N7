@@ -7,9 +7,9 @@ class CartModel{
     }
 
     public function insertProductToCart($data){
-        $sql = "insert into cartdetail (id_product, quantity, price, id_user)
-        values (?, ?, ?, ?)";
-        $param = [$data['id_product'], $data['quantity'], $data['price'], $data['id_user']];
+        $sql = "insert into cartdetail (id_product, id_user)
+        values (?, ?)";
+        $param = [$data['id_product'], $data['id_user']];
         return $this->db->insert($sql, $param);
     }
 

@@ -16,6 +16,7 @@ if (isset($_GET['page'])) {
 
         case 'chiTietSp':
             $productController->detail();
+            $productController->addProductToCart();
             break;
 
         case 'dangNhap':

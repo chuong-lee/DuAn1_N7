@@ -1,14 +1,16 @@
 <link rel="stylesheet" href="<?php echo '../public/client/css/detail.css'; ?>">
 
 <div class="wrapper-container">
-  <?php extract($data['productDetail']);
+  <?php
+  // print_r($data['productDetail']);
+  extract($data['productDetail']);
   $formattedName = str_replace(' ', '', $tendanhmuc);
   echo '<div class="row">
     <div class="custom-div">
       <div class="row">
         <div class="column anh-sp">
           <div class="san-pham">
-            <img src="../public/client/images/danhmuc/'.$formattedName.'/'.$image.'" alt="#">
+            <img src="../public/client/images/danhmuc/' . $formattedName . '/' . $image . '" alt="#">
 
           </div>
         </div>
@@ -22,13 +24,13 @@
     <div class="column thong_tin_sp ">
       <div class="product-wrapper">
         <div class=" product-title">
-          <h1 style="text-transform: uppercase;">'.$name.'</h1>
-          <p>SKU:'.$id_product .'
+          <h1 style="text-transform: uppercase;">' . $name . '</h1>
+          <p>SKU:' . $id_product . '
           </p>
         </div>
 
         <div class="column gia">
-          <span>'.$price.' VND</span>
+          <span>' . $price . ' VND</span>
 
         </div>
       </div>
@@ -75,12 +77,13 @@
               <span>Hướng dẫn chọn size</span>
             </label></a>
         </div>
-
+    <form method="POST">
         <div class="huong-dan">
-          <a href="index.php?page=gioHang" class="btn-choose-size">
-            <label class="size-list" style="">
-              <span>Thêm giỏ hàng</span>
-            </label></a>
+          <button type="submit" class="btn-choose-size" name="addProductToCart" >Thêm vào giỏ hàng</button>
+
+      <input type="hidden" value="' . $id_product . '" name="id_product">
+      <input type="hidden" value="" class="user-id" name="id_user">
+    </form>
           <div>
             <p>
               <b>Chất liệu:</b> vải dạ cao cấp
@@ -97,9 +100,21 @@
 
 
     </div>
-
+    
 
   </div>'
   ?>
-  
+
 </div>
+<script>
+  const userIdss = sessionStorage.getItem('userId');
+  if (userIdss) {
+    // Lấy tất cả các thẻ input có class "user-id"
+    const inputs = document.querySelector(".user-id");
+
+    // Gán userId vào từng thẻ input
+    inputs.value = userIdss;
+  } else {
+    console.log("Không tìm thấy userId");
+  }
+</script>
