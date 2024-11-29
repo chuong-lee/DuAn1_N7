@@ -16,17 +16,28 @@
   <link rel="stylesheet" href="../public/client/css/flag-icons.min.css">
   <link rel="stylesheet" href="../public/client/css/style.css">
   <link rel="stylesheet" href="../public/client/slick/slick.css">
+  <link rel="stylesheet" href="../public/client/css/sb-admin-2.min.css">
+  <link rel="stylesheet" href="../public/client/css/style.css">
+  <link rel="stylesheet" href="../public/client/slick/slick.css">
+  <link rel="stylesheet" href="../public/client/fonts/fontstyle.css">
   <!--link(rel='stylesheet' href='client/fonts/fontstyle.css')-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,600,700&amp;subset=latin,latin-ext" type="text/css" media="all">
 </head>
 
 <body>
-  <script src="../public/client/js/jquery.min.js"></script>
-  <script src="../public/client/js/all.min.js"></script>
-  <script src="../public/client/js/bootstrap.bundle.min.js"></script>
-  <script src="../public/client/js/moment.min.js"></script>
-  <script src="../public/client/slick/slick.js"></script>
-  <script src="../public/client/js/main.js"></script>
+<script src="../public/client/js/sb-admin-2.min.js"></script>
+<script src="../public/client/js/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="../public/client/js/vendor/chart.js/Chart.min.js"></script>
+<script src="../public/client/js/demo/chart-area-demo.js"></script>
+<script src="../public/client/js/demo/chart-pie-demo.js"></script>
+<script src="../public/client/js/demo/chart-bar-demo.js"></script>
+<script src="../public/client/js/demo/datatables-demo.js"></script>
+<script src="../public/client/js/all.min.js"></script>
+<script src="../public/client/js/jquery.min.js"></script>
+<script src="../public/client/js/bootstrap.bundle.min.js"></script>
+<script src="../public/client/js/moment.js"></script>
+<script src="../public/client/slick/slick.js"></script>
+<script src="../public/client/js/main.js"></script>
   <script>
     $(document).ready(function() {
       if ($(window).width() > 769) {
