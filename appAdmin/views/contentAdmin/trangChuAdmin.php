@@ -1,4 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Dashboard</title>
+
+    <link rel="stylesheet" href="../public/client/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/client/css/all.min.css">
+    <link rel="stylesheet" href="../public/client/css/hover-min.css">
+    <link rel="stylesheet" href="../public/client/css/flag-icons.min.css">
+    <link rel="stylesheet" href="../public/client/css/style.css">
+    <link rel="stylesheet" href="../public/client/slick/slick.css">
+    <link rel="stylesheet" href="../public/client/css/sb-admin-2.min.css">
+    <link rel="stylesheet" href="../public/client/css/style.css">
+    <link rel="stylesheet" href="../public/client/slick/slick.css">
+    <link rel="stylesheet" href="../public/client/fonts/fontstyle.css">
+
+</head>
 <!-- Page Wrapper -->
+ 
 <div id="wrapper">
 
     <!-- Sidebar -->
@@ -17,7 +43,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="#">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
         </li>
@@ -32,38 +58,21 @@
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+            <a class="nav-link collapsed" href="indexAdmin.php?page=capnhatsanpham" data-toggle="collapse" data-target="#collapseTwo"
                aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-cog"></i>
-                <span>Components</span>
+                <span>Manage Product</span>
                 <i class="fa-solid fa-right"></i>
             </a>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Custom Components:</h6>
-                    <a class="collapse-item" href="buttons.html">Buttons</a>
-                    <a class="collapse-item" href="cards.html">Cards</a>
-                </div>
-            </div>
         </li>
 
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+            <a class="nav-link collapsed" href="indexAdmin.php?page=capnhatdanhmuc" data-toggle="collapse" data-target="#collapseUtilities"
                aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-fw fa-wrench"></i>
-                <span>Utilities</span>
+                <i class="fas fa-fw fa-table"></i>
+                <span>Manage Category</span>
             </a>
-            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                 data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Custom Utilities:</h6>
-                    <a class="collapse-item" href="utilities-color.html">Colors</a>
-                    <a class="collapse-item" href="utilities-border.html">Borders</a>
-                    <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                    <a class="collapse-item" href="utilities-other.html">Other</a>
-                </div>
-            </div>
         </li>
 
         <!-- Divider -->
@@ -76,53 +85,19 @@
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+            <a class="nav-link collapsed" href="indexAdmin.php?page=thongtin" data-toggle="collapse" data-target="#collapsePages"
                aria-expanded="true" aria-controls="collapsePages">
                 <i class="fas fa-fw fa-folder"></i>
-                <span>Pages</span>
+                <span>Manage User</span>
             </a>
-            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Login Screens:</h6>
-                    <a class="collapse-item" href="login.html">Login</a>
-                    <a class="collapse-item" href="register.html">Register</a>
-                    <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                    <div class="collapse-divider"></div>
-                    <h6 class="collapse-header">Other Pages:</h6>
-
-                </div>
-            </div>
         </li>
 
         <!-- Nav Item - Charts -->
         <li class="nav-item">
             <a class="nav-link" href="charts.html">
                 <i class="fas fa-fw fa-chart-area"></i>
-                <span>Charts</span></a>
+                <span>Manage Banners</span></a>
         </li>
-
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="tables.html">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Tables</span></a>
-        </li>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
-
-        <!-- Sidebar Toggler (Sidebar) -->
-        <div class="text-center d-none d-md-inline">
-            <button class="rounded-circle border-0" id="sidebarToggle"></button>
-        </div>
-
-        <!-- Sidebar Message -->
-        <div class="sidebar-card d-none d-lg-flex">
-            <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
-            <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-            <a class="btn btn-success btn-sm" href="">Upgrade to Pro!</a>
-        </div>
-
     </ul>
     <!-- End of Sidebar -->
 
@@ -645,3 +620,22 @@
         </div>
     </div>
 </div>
+
+<body id="page-top">
+
+<script src="../public/client/js/sb-admin-2.min.js"></script>
+<script src="../public/client/js/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="../public/client/js/vendor/chart.js/Chart.min.js"></script>
+<script src="../public/client/js/demo/chart-area-demo.js"></script>
+<script src="../public/client/js/demo/chart-pie-demo.js"></script>
+<script src="../public/client/js/demo/chart-bar-demo.js"></script>
+<script src="../public/client/js/demo/datatables-demo.js"></script>
+<script src="../public/client/js/all.min.js"></script>
+<script src="../public/client/js/jquery.min.js"></script>
+<script src="../public/client/js/bootstrap.bundle.min.js"></script>
+<script src="../public/client/js/moment.js"></script>
+<script src="../public/client/slick/slick.js"></script>
+<script src="../public/client/js/main.js"></script>
+    <script src="../public/client/js/demo/chart-pie-demo.js"></script>
+
+</body>

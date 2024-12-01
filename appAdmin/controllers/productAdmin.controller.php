@@ -1,5 +1,5 @@
 <?php
-class ProductController
+class ProductAdminController
 {
     private $productModel;
     private $categoryModel;
@@ -20,7 +20,7 @@ class ProductController
         if (!empty($data)) {
             extract($data);
         }
-        $viewPath = './views/content/' . $view . '.php';
+        $viewPath = './views/contentAdmin/' . $view . '.php';
         if (file_exists($viewPath)) {
             include $viewPath;
         } else {
@@ -33,7 +33,7 @@ class ProductController
         $products = $this->productModel->getAllProduct();
         if (!empty($products)) {
             $data['products'] = $products;
-            $this->renderView($data, 'sanPham');
+            $this->renderView($data, 'capnhatsanpham');
         } else {
             echo "Không tìm thấy sản phẩm.";
         }
@@ -73,7 +73,7 @@ class ProductController
         if (is_array($allProducts)) {
             $data['products'] = $allProducts;
             // $data['currentUser'] = $this->userModel->getUser();
-            $this->renderView($data, 'sanPham');
+            $this->renderView($data, 'capnhatsanpham');
         } else {
             echo "Không tìm thấy sản phẩm ";
         }
