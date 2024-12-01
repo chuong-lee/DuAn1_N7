@@ -81,8 +81,8 @@
         <div class="huong-dan">
           <button type="submit" class="btn-choose-size" name="addProductToCart" >Thêm vào giỏ hàng</button>
 
-      <input type="hidden" value="' . $id_product . '" name="id_product">
-      <input type="hidden" value="" class="user-id" name="id_user">
+      <input type="text" value="' . $id_product . '" name="id_product">
+      <input type="text" value="" class="user-id" name="id_user">
     </form>
           <div>
             <p>
