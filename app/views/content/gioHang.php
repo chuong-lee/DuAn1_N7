@@ -35,31 +35,40 @@
                                     $totalPrice = $price * $quantity;
                                     echo '<tr>
                                     <td class="py-3 table-img"><img class="w-100" src="../public/client/images/danhmuc/' . $formattedName . '/' . $image . '"></td>
-                                    <td class="py-3 text-center text-highline-2 fw-bold">' . $name . '</td>
-                                    <td class="py-3 text-center text-highline-2 fw-bold price-product"  data-product-id="' . $id_product . '">' . $price . '</td>
-                                    <td>
-                                        <div class="info-product">
-                                            <div class=" product-title">
-                                                <div class="select-swap d-flex justify-content-around align-items-center">
-                                                    <button class="btn btn-light" onclick="handleDownQuantity(' . $id_product . ')"> - </button>
-                                                    <div id="quantity">
-                                                        <label for="" class="sd">
-                                                            <span class="quantity-value" data-product-id="' . $id_product . '" value="' . $quantity . '">' . $quantity . '</span>
-                                                        </label>
+                                    <form method="POST">
+                                        <td class="py-3 text-center text-highline-2 fw-bold">' . $name . '
+                                        <input type="text" value="' . $id_product . '" name="id_product">
+                                        <input type="text" value="" class="user-id" name="id_user">
+                                        <input type="text" name="quantity" class="value-quantity" data-product-id="' . $id_product . '"  value="' . $quantity . '">
+                                        </td>
+                                        <td class="py-3 text-center text-highline-2 fw-bold price-product"  data-product-id="' . $id_product . '">' . $price . '</td>
+                                        <td>
+                                            <div class="info-product">
+                                                <div class=" product-title">
+                                                    <div class="select-swap d-flex justify-content-around align-items-center">
+                                                        <button class="btn btn-light" onclick="handleDownQuantity(' . $id_product . ')" name="discreaseQuantity"> - </button>
+                                                        <div id="quantity">
+                                                            <label for="" class="sd">
+                                                                <span class="quantity-value" data-product-id="' . $id_product . '" value="' . $quantity . '">' . $quantity . '</span>
+                                                            </label>
+                                                        </div>
+
+                                                        <button class="btn btn-light" onclick="handleUpQuantity(' . $id_product . ')" name="increaseQuantity"> + </button>
+
                                                     </div>
 
-                                                    <button class="btn btn-light" onclick="handleUpQuantity(' . $id_product . ')"> + </button>
-
                                                 </div>
-
                                             </div>
-                                        </div>
-                                    </td>
+                                        </td>
+                                    </form>
+                                    
                                     <td class="py-3 text-center text-highline-2 total-price"  data-product-id="' . $id_product . '">' . $totalPrice . '</td>
                                     <td class="py-3 text-center text-highline-2">
-                                        <a class="deleted_product" onclick="handleDeleted('.$id_product.')" href="index.php?page=delProductInCart&id_product=' . $id_product . '" data-product-id="' . $id_product . '"><i class="fa-regular fa-trash"></i></a>
+                                        <a class="deleted_product" onclick="handleDeleted(' . $id_product . ')" href="index.php?page=delProductInCart&id_product=' . $id_product . '" data-product-id="' . $id_product . '"><i class="fa-regular fa-trash"></i></a>
                                     </td>
-                                </tr>';
+                                    
+                                    </tr>
+                                    ';
                                 }
 
                                 ?>
@@ -90,7 +99,8 @@
                         }
                         echo '<li>Tổng cộng: <span class="cart-subtotal" id="tong-tien" data-product-id="' . $id_product . '">' . $tongTien . '</span></li>';
                         ?>
-                    </ul><a class="primary-btn" href="checkout.html">THANH TOÁN</a>
+                    </ul><a class="primary-btn" id="navigate-transaction-page" href="index.php?page=thanhtoan">THANH
+                        TOÁN</a>
                 </div>
             </div>
         </div>
@@ -99,15 +109,30 @@
 </section>
 <script>
     let idUser = sessionStorage.getItem('userId');
-    function handleDeleted(id_product){
-        const deletedProduct = document.querySelector(`.deleted_product[data-product-id='${id_product}']`);
-        const currentHref = deletedProduct.href;
+    if (idUser) {
+        const inputs = document.querySelectorAll(".user-id");
+        inputs.forEach(input => {
+            input.value = idUser;
+        });
+    }
+
+    function addHref(tag) {
+        const currentHref = tag.href;
         const url = new URL(currentHref);
         url.searchParams.set('userId', idUser);
-        deletedProduct.href = url.toString();
-        console.log(deletedProduct.href);
-        window.location.href = deletedProduct.href;
+        tag.href = url.toString();
+        console.log(tag.href);
+        window.location.href = tag.href;
     }
+    function handleDeleted(id_product) {
+        const deletedProduct = document.querySelector(`.deleted_product[data-product-id='${id_product}']`);
+        addHref(deletedProduct)
+    }
+
+    const navigatePage = document.querySelector('#navigate-transaction-page');
+    navigatePage.addEventListener('click', (e) => {
+        addHref(navigatePage)
+    })
 
 
 
@@ -141,27 +166,45 @@
 
 
 
-    function handleUpQuantity(id_product) {
+    function handleUpQuantity(id_product, envent) {
+        // Lấy các phần tử liên quan đến sản phẩm
         let quantityElement = document.querySelector(`.quantity-value[data-product-id='${id_product}']`);
         let totalPrice = document.querySelector(`.total-price[data-product-id='${id_product}']`);
         let priceProduct = document.querySelector(`.price-product[data-product-id='${id_product}']`);
+        let inputQuantity = document.querySelectorAll(`.value-quantity[data-product-id='${id_product}']`);
         let tongTienElement = document.querySelector(`#tong-tien`);
 
-        if (quantityElement && totalPrice && priceProduct) {
-            let quantity = parseInt(quantityElement.textContent);
+        if (quantityElement && totalPrice && priceProduct && inputQuantity) {
+            // Lấy giá trị hiện tại
+            let quantity = parseInt(quantityElement.innerText) || 0;
+
+            // Tăng giá trị
             quantity++;
-            quantityElement.textContent = quantity;
 
-            let newTotalPrice = parseInt(priceProduct.textContent) * quantity;
-            totalPrice.textContent = newTotalPrice;
-
-            let newTongTien = 0;
-            let listTongTien = document.querySelectorAll('.total-price');
-            listTongTien.forEach(item => {
-                newTongTien += parseInt(item.textContent);
+            // Cập nhật DOM ngay lập tức
+            quantityElement.innerText = quantity;
+            inputQuantity.forEach(item => {
+                item.value = quantity;
             });
 
-            tongTienElement.textContent = newTongTien;
+            // Tính toán giá mới
+            let price = parseInt(priceProduct.innerText) || 0;
+            let newTotalPrice = price * quantity;
+            totalPrice.innerText = newTotalPrice;
+
+            // Cập nhật tổng tiền
+            let newTongTien = 0;
+            document.querySelectorAll('.total-price').forEach(item => {
+                newTongTien += parseInt(item.innerText) || 0; // Đảm bảo tính toán hợp lệ
+            });
+            tongTienElement.innerText = newTongTien;
+            
+        } else {
+            console.error(`One or more elements are missing for product ID: ${id_product}`);
         }
     }
+
+
+
+
 </script>

@@ -42,5 +42,27 @@ class CartController{
             echo'<script>location.href="index.php?page=gioHang&userId='.$userId.'";</script>'; 
         }
     }
+
+    function updateQuantityInCart() {
+        if (isset($_POST['increaseQuantity'])) {
+            $data = [];
+            $data['id_user'] = $_POST['id_user'] ?? '';
+            $data['id_product'] = $_POST['id_product'] ?? '';
+            $data['quantity'] = $_POST['quantity'] ?? '';
+            
+    
+            if (!empty($data['id_product']) && !empty($data['id_user']) && !empty($data['quantity'])) {
+                // Kiểm tra nếu sản phẩm đã tồn tại trong giỏ hàng
+                $existingProduct = $this->cartModel->findProductInCart($data['id_product'], $data['id_user']);
+    
+                if ($existingProduct) {
+                    $this->cartModel->updatedProductToCart($data);
+                }
+            } else {
+                // Nếu không có user hoặc product ID, chuyển hướng đến trang đăng nhập
+                echo '<script>location.href="index.php?page=dangNhap";</script>';
+            }
+        }
+    }
 }
 ?>

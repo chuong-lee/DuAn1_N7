@@ -77,13 +77,16 @@ class UserController{
     }
 
     public function getUserById(){
-        $userId = 4;
-        $userDetail = $this->user->getUserById($userId);
-        if($userDetail){
-            $data['userDetail'] =$userDetail;
-            $this->renderView($data, 'header');
-        }else{
-            echo '<script>location.href="index.php?page=dangNhap";</script>';
+        if(isset($_GET['userId'])){
+            $userId = $_GET['userId'];
+            $userDetail = $this->user->getUserById($userId);
+            if($userDetail){
+                $data['userDetail'] =$userDetail;
+                $this->renderView($data, 'header');
+            }else{
+                echo '<script>location.href="index.php?page=dangNhap";</script>';
+            }
         }
+        
     }
 }
