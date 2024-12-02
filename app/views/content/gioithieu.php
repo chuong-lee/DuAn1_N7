@@ -12,11 +12,18 @@
         </div>
         <div class="contact spad my-5">
             <div class="text">
-                Chào mừng bạn đến với UrbanMen – thương hiệu hàng đầu dành riêng cho phái mạnh, nơi mang đến sự kết hợp hoàn hảo giữa phong cách và chất lượng trong từng món phụ kiện trang sức nam. Chúng tôi hiểu rằng phụ kiện không chỉ là món đồ trang trí, mà còn là cách bạn thể hiện cá tính, phong thái và dấu ấn riêng trong mọi hoàn cảnh. <br>
-                UrbanMen tự hào mang đến một bộ sưu tập đa dạng, từ những chiếc vòng tay mạnh mẽ thể hiện sự nam tính, dây chuyền sang trọng đầy tinh tế, đến những mẫu nhẫn đẳng cấp được chế tác tỉ mỉ, phù hợp với nhiều phong cách – từ năng động, cá tính đến lịch lãm, cổ điển. Mỗi sản phẩm của chúng tôi đều được chăm chút kỹ lưỡng, sử dụng chất liệu cao cấp và thiết kế hiện đại, đảm bảo vừa bền bỉ vừa thời trang. <br>
-                Để mang đến trải nghiệm mua sắm thuận tiện và thoải mái, UrbanMen tọa lạc ngay tại Công viên Phần mềm Quang Trung, một vị trí đắc địa với không gian hiện đại và năng động. Chúng tôi sẵn sàng đón tiếp bạn để bạn có thể trực tiếp trải nghiệm các sản phẩm chất lượng và nhận được sự tư vấn tận tình từ đội ngũ chuyên nghiệp của mình. <br>
-                Với sứ mệnh tôn vinh phong cách phái mạnh, UrbanMen không ngừng đổi mới, cập nhật những xu hướng phụ kiện mới nhất để mang đến cho bạn những lựa chọn hoàn hảo nhất. Hãy để UrbanMen đồng hành cùng bạn trên hành trình khẳng định phong cách, tự tin thể hiện bản lĩnh và để lại dấu ấn khó quên trong mắt mọi người xung quanh. <br>
-                Chọn UrbanMen – chọn sự đẳng cấp!
+            <?php
+                        $trsp = '';
+                        foreach ($sp->mangsp as $key => $value) {
+                            $trsp .= '
+                            <div class="col-lg-4 col-md-9">
+                                <article>
+                                    '.$value['name'].'
+                                </article>
+                            </div>';
+                        }
+                        echo $trsp;
+                        ?>
             </div>
           <div class="container">
             <div class="row">
