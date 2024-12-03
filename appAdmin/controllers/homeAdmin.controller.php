@@ -4,10 +4,11 @@ class HomeAdminController
 {
     private $data;
     private $productModel;
+    private $categoryModel;
 
     function __construct() {
         $this->productModel = new ProductModel();
-        // $this->categoryModel = new CategoryModel();
+        $this->categoryModel = new CategoryModel();
     }
     public function renderViewAdmin($view, $data)
     {
@@ -27,5 +28,21 @@ class HomeAdminController
         $this->renderViewAdmin('trangChuAdmin',$this->data);
     }
 
+    
+    public function getDataByname()
+    {
+        $this->data['dsdm'] = $this->categoryModel->getAllCategory();
+        $allProducts = [];
+        if (!empty($this->data['dsdm'])) {
+            foreach ($this->data['dsdm'] as $category) {
+                $categoryName = $category['name'];
+                $products = $this->productModel->getDataByName($categoryName);
+                if (!empty($products)) {
+                    $allProducts = array_merge($allProducts, $products);
+                }
+            }
+        }
+        $this->data['dssp'] = $allProducts;
+    }
     
 }

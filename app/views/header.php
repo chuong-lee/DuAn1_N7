@@ -10,14 +10,14 @@
   <title>Ubrand-shop</title>
   <link rel="icon" href="../public/client/images/logo.png" type="image/gif" sizes="16x16">
   <!-- main css-->
-  <link rel="stylesheet" href="../public/client/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../public/client/css/all.min.css">
-  <link rel="stylesheet" href="../public/client/css/hover-min.css">
-  <link rel="stylesheet" href="../public/client/css/flag-icons.min.css">
-  <link rel="stylesheet" href="../public/client/css/style.css">
+  <link rel="stylesheet" href="../public/client/css-test/bootstrap.min.css">
+  <link rel="stylesheet" href="../public/client/css-test/all.min.css">
+  <link rel="stylesheet" href="../public/client/css-test/hover-min.css">
+  <link rel="stylesheet" href="../public/client/css-test/flag-icons.min.css">
+  <link rel="stylesheet" href="../public/client/css-test/style.css">
   <link rel="stylesheet" href="../public/client/slick/slick.css">
-  <link rel="stylesheet" href="../public/client/css/sb-admin-2.min.css">
-  <link rel="stylesheet" href="../public/client/css/style.css">
+  <link rel="stylesheet" href="../public/client/css-test/sb-admin-2.min.css">
+  <link rel="stylesheet" href="../public/client/css-test/style.css">
   <link rel="stylesheet" href="../public/client/slick/slick.css">
   <link rel="stylesheet" href="../public/client/fonts/fontstyle.css">
   <!--link(rel='stylesheet' href='client/fonts/fontstyle.css')-->

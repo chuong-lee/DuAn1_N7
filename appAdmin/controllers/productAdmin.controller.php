@@ -102,4 +102,64 @@ class ProductAdminController
         }
     }
 
+    public function getDataByname()
+    {
+        $data['dsdm'] = $this->categoryModel->getAllCategory();
+        $allProducts = [];
+        if (!empty($data['dsdm'])) {
+            foreach ($data['dsdm'] as $category) {
+                $categoryId = $category['id'];
+                $products = $this->productModel->getAllProducts($categoryId);
+                if (!empty($products)) {
+                    $allProducts = array_merge($allProducts, $products);
+                }
+            }
+        }
+        $this->data['dssp'] = $allProducts;
+        $this->renderView($this->data, 'capnhatsanpham');
+    }
+
+    public function getAllCategory(){
+        $listCategory = $this->categoryModel->getAllCategory();
+        if($listCategory){
+            $data['dsdm'] = $listCategory;
+            $this->renderView($data, 'addProducts');
+        }else{
+            echo ' Danh sách danh mục chưa có';
+        }
+    }
+
+    public function addPro() {
+        $data = [];
+        if (isset($_POST['addPro'])) {
+            $data['id_danhmuc'] = $_POST['id_danhmuc'] ?? null;
+            $data['name'] = $_POST['product-name'] ?? '';
+            $data['price'] = $_POST['price'] ?? 0;
+            $data['quantity'] = $_POST['quantity'] ?? 0;
+            $data['description'] = $_POST['description'] ?? '';
+            $data['sale_price'] = $_POST['sale_price'] ?? 0; 
+            $data['image'] = $_FILES['image']['name'] ?? '';
+            $tendanhmuc = $_POST['tendanhmuc'] ?? 'default';
+    
+            // Tạo đường dẫn lưu ảnh theo tên danh mục
+            $uploadDir = "../public/client/images/danhmuc/{$tendanhmuc}/";
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir, 0777, true);
+            }
+    
+            // Lưu file vào thư mục tương ứng
+            $file = $uploadDir . basename($data['image']);
+            if (move_uploaded_file($_FILES['image']['tmp_name'], $file)) {
+                // Lưu đường dẫn ảnh vào cơ sở dữ liệu
+                $data['image'] = "{$uploadDir}{$data['image']}";
+                $this->productModel->insertPro($data);
+                echo '<script>alert("Thêm sản phẩm thành công!");</script>';
+                echo '<script>location.href="indexAdmin.php?page=capnhatsanpham";</script>';
+            } else {
+                echo '<script>alert("Không thể tải lên hình ảnh. Vui lòng thử lại.");</script>';
+            }
+        }
+    }
+    
+
 }

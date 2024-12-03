@@ -1,7 +1,7 @@
 <?php
 require_once '../config/importAdminController.php';
 require_once '../config/importModel.php';
-// require_once 'views/headerAdmin.php';
+require_once 'views/headerAdmin.php';
 $productController = new ProductAdminController();
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
@@ -14,16 +14,17 @@ if (isset($_GET['page'])) {
         //     $productController->renderViewAdmin();
         //     break;
 
-        // case 'capnhat':
-        //     $productController->renderViewAdmin();
-        //     break;
+        case 'addProducts':
+            $productController->getAllCategory();
+            $productController->addPro();
+            break;
 
         case 'capnhatdanhmuc':
-            $productController->getProductByCategory();
+            // $productController->getProductByCategory();
             break;
 
         case 'capnhatsanpham':
-            $productController->getProductByCategory();
+            $productController->getDataByname();
             break;
 
         // case 'thongtin':
@@ -41,3 +42,7 @@ if (isset($_GET['page'])) {
     $home = new HomeAdminController();
     $home->getProduct();
 }
+
+require_once 'views/footerAdmin.php';
+
+?>
