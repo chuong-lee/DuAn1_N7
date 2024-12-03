@@ -37,9 +37,9 @@
                                     <td class="py-3 table-img"><img class="w-100" src="../public/client/images/danhmuc/' . $formattedName . '/' . $image . '"></td>
                                     <form method="POST">
                                         <td class="py-3 text-center text-highline-2 fw-bold">' . $name . '
-                                        <input type="text" value="' . $id_product . '" name="id_product">
-                                        <input type="text" value="" class="user-id" name="id_user">
-                                        <input type="text" name="quantity" class="value-quantity" data-product-id="' . $id_product . '"  value="' . $quantity . '">
+                                        <input type="hidden" value="' . $id_product . '" name="id_product">
+                                        <input type="hidden" value="" class="user-id" name="id_user">
+                                        <input type="hidden" name="quantity" class="value-quantity" data-product-id="' . $id_product . '"  value="' . $quantity . '">
                                         </td>
                                         <td class="py-3 text-center text-highline-2 fw-bold price-product"  data-product-id="' . $id_product . '">' . $price . '</td>
                                         <td>
@@ -140,6 +140,7 @@
         let quantityElement = document.querySelector(`.quantity-value[data-product-id='${id_product}']`);
         let totalPriceElement = document.querySelector(`.total-price[data-product-id='${id_product}']`);
         let priceProductElement = document.querySelector(`.price-product[data-product-id='${id_product}']`);
+        let inputQuantity = document.querySelectorAll(`.value-quantity[data-product-id='${id_product}']`);
         let tongTienElement = document.querySelector(`#tong-tien`);
 
         if (quantityElement && totalPriceElement && priceProductElement && tongTienElement) {
@@ -149,6 +150,9 @@
             if (quantity > 1) {
                 quantity--;
                 quantityElement.textContent = quantity;
+                inputQuantity.forEach(item => {
+                    item.value = quantity;
+                });
 
                 let newTotalPrice = priceProduct * quantity;
                 totalPriceElement.textContent = newTotalPrice;
@@ -175,30 +179,23 @@
         let tongTienElement = document.querySelector(`#tong-tien`);
 
         if (quantityElement && totalPrice && priceProduct && inputQuantity) {
-            // Lấy giá trị hiện tại
-            let quantity = parseInt(quantityElement.innerText) || 0;
-
-            // Tăng giá trị
+            let quantity = parseInt(quantityElement.innerText)
             quantity++;
-
-            // Cập nhật DOM ngay lập tức
             quantityElement.innerText = quantity;
             inputQuantity.forEach(item => {
                 item.value = quantity;
             });
 
-            // Tính toán giá mới
-            let price = parseInt(priceProduct.innerText) || 0;
+            let price = parseInt(priceProduct.innerText)
             let newTotalPrice = price * quantity;
             totalPrice.innerText = newTotalPrice;
 
-            // Cập nhật tổng tiền
             let newTongTien = 0;
             document.querySelectorAll('.total-price').forEach(item => {
-                newTongTien += parseInt(item.innerText) || 0; // Đảm bảo tính toán hợp lệ
+                newTongTien += parseInt(item.innerText)
             });
             tongTienElement.innerText = newTongTien;
-            
+
         } else {
             console.error(`One or more elements are missing for product ID: ${id_product}`);
         }

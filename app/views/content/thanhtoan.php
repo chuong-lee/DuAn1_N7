@@ -51,7 +51,7 @@
                                 $listProduct = $data['cartProduct'];
                                 $tongTien = 0;
                                 foreach ($listProduct as $product) {
-                                    print_r($product);
+                                    // print_r($product);
                                     extract($product);
                                     $formattedName = str_replace(' ', '', $tendanhmuc);
                                     $totalPrice = $quantity * $price;
@@ -64,8 +64,8 @@
                                     </div>
                                     <div>'.$quantity.'</div>
                                     <div>'.$totalPrice.'</div>
-                                    <input type="text" value="'.$id_product.'" name="productId">
-                                    <input type="text" value="'.$quantity.'" name="quantity">
+                                    <input type="hidden" value="'.$id_product.'" name="productId">
+                                    <input type="hidden" value="'.$quantity.'" name="quantity">
                                 </div>';
                                 }
                                 echo '

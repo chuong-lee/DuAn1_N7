@@ -40,8 +40,6 @@ class OrderController{
             //     }
 
             // }
-        }else{
-            echo 'Bạn chưa truyền order xuống db';
         }
     }
 }
