@@ -44,7 +44,7 @@ class CartController{
     }
 
     function updateQuantityInCart() {
-        if (isset($_POST['increaseQuantity'])) {
+        if (isset($_POST['increaseQuantity']) || isset($_POST['discreaseQuantity'])) {
             $data = [];
             $data['id_user'] = $_POST['id_user'] ?? '';
             $data['id_product'] = $_POST['id_product'] ?? '';

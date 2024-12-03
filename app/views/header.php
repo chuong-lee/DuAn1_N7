@@ -84,7 +84,7 @@
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item" href="#">Thông tin người dùng</a></li>
                 <li><a class="dropdown-item" href="#">Thông tin đơn hàng</a></li>
-                <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+                <li><a class="dropdown-item" id="logout" href="#">Đăng xuất</a></li>
               </ul>
             </div>
             <!-- <form id="cart-form" action="index.php?page=gioHang" method="GET">
@@ -118,11 +118,18 @@
       userInfo.style.display = 'none'
     }
     document.getElementById('cart-link').addEventListener('click', function(e) {
-      console.log(22222222);
       if (userId) {
         document.getElementById('cart-link').href = `index.php?page=gioHang&userId=${userId}`
       } else {
         location.href="index.php?page=dangNhap";
       }
     });
+
+
+    document.querySelector('#logout').addEventListener('click', function(e){
+      if(userId){
+        sessionStorage.clear();
+        location.href="index.php?page=dangNhap";
+      }
+    })
   </script>
