@@ -4,7 +4,7 @@
             <div class="checkout-form">
                 <h4>Thông Tin Giao Hàng</h4>
 
-                <form action="xac-nhan" method="post" class="mt-5">
+                <form method="post" class="mt-5">
                     <div class="row">
                         <?php
                         // print_r($data['userDetail']);
@@ -51,7 +51,7 @@
                                 $listProduct = $data['cartProduct'];
                                 $tongTien = 0;
                                 foreach ($listProduct as $product) {
-                                    // print_r($product);
+                                    print_r($product);
                                     extract($product);
                                     $formattedName = str_replace(' ', '', $tendanhmuc);
                                     $totalPrice = $quantity * $price;
@@ -64,18 +64,25 @@
                                     </div>
                                     <div>'.$quantity.'</div>
                                     <div>'.$totalPrice.'</div>
+                                    <input type="text" value="'.$id_product.'" name="productId">
+                                    <input type="text" value="'.$quantity.'" name="quantity">
                                 </div>';
                                 }
-                                echo '<div class="mt-5 checkout-order-subtotal d-flex justify-content-between fw-bold fs-5 mb-3">
+                                echo '
+                                <div class="mt-5 checkout-order-subtotal d-flex justify-content-between fw-bold fs-5 mb-3">
+                                    <span class="text-highline">Phương thức thanh toán</span>
+                                    <span>Thanh toán sau khi nhận hàng</span>
+                                </div>
+                                <div class="mt-5 checkout-order-subtotal d-flex justify-content-between fw-bold fs-5 mb-3">
                                     <span class="text-highline">Tổng tiền</span><span>'.$tongTien.'</span>
                                 </div>';
                                 
                                 ?>
-                                <button class="site-btn btn-submit border-0 rounded-4 mt-3 py-2 px-4 float-right" type="submit">Đặt
+                                <button class="site-btn btn-submit border-0 rounded-4 mt-3 py-2 px-4 float-right" type="submit" name="orderProduct">Đặt
                                     Hàng</button>
+                                
                             </div>
                         </div>
-
                     </div>
                 </form>
             </div>

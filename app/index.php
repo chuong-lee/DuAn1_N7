@@ -7,6 +7,7 @@ $productController = new ProductController();
 $userController = new UserController();
 $cartController = new CartController();
 $transactionController = new TransactionController();
+$orderController = new OrderController();
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
 
@@ -38,10 +39,10 @@ if (isset($_GET['page'])) {
         case 'gioithieu':
             $gioithieu = new gioithieuController();
             break;
-
+ 
         case 'thanhtoan':
             $transactionController -> getUserById();
-            // $transactionController -> getProductToCart();
+            $orderController->createdOrderProduct();
             break;
 
         case 'lienhe':
