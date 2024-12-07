@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98e47878-96be-4fdb-8cbd-9e61155f177d" name="Changes" comment="" />
+    <list default="true" id="98e47878-96be-4fdb-8cbd-9e61155f177d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appAdmin/controllers/dm_sp_C.php" beforeDir="false" afterPath="$PROJECT_DIR$/appAdmin/controllers/dm_sp_C.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appAdmin/indexAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/appAdmin/indexAdmin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appAdmin/models/dm_sp_M.php" beforeDir="false" afterPath="$PROJECT_DIR$/appAdmin/models/dm_sp_M.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appAdmin/models/product_M.php" beforeDir="false" afterPath="$PROJECT_DIR$/appAdmin/models/product_M.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,18 +22,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "minhlt246"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;minhlt246&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/chuong-lee/DuAn1_N7.git",
-    "accountId": "0b95cb29-af3f-4b73-a120-6f4b4ae1d745"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/chuong-lee/DuAn1_N7.git&quot;,
+    &quot;accountId&quot;: &quot;0b95cb29-af3f-4b73-a120-6f4b4ae1d745&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -87,6 +93,9 @@
       <workItem from="1732675814533" duration="14044000" />
       <workItem from="1732767520106" duration="334000" />
       <workItem from="1732810822713" duration="1024000" />
+      <workItem from="1732850400835" duration="2345000" />
+      <workItem from="1732894361799" duration="1599000" />
+      <workItem from="1733231108963" duration="619000" />
     </task>
     <servers />
   </component>
@@ -98,7 +107,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/views/content/sanPham.php</url>
-          <line>73</line>
+          <line>79</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

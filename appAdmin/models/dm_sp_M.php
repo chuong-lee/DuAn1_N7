@@ -1,15 +1,15 @@
 <?php
-class Dm_sp_M {
-    public function dsdm() {
-        include_once 'models/connectmodel.php';
+class category_M {
+    public function listcategory() {
+        include_once 'config/db.config.php';
         $th = new ConnectModel();
-        $sql = "SELECT * FROM dm_sp";
+        $sql = "SELECT * FROM category";
         return $th->selectall($sql);
     }
 
-    public function them($tendm) {
-        $sql = "INSERT INTO dm_sp (tendm) VALUES ('$tendm')";
-        include_once 'models/connectmodel.php';
+    public function add($category) {
+        $sql = "INSERT INTO category (category) VALUES ('$category')";
+        include_once 'config/db.config.php';
         $dm = new ConnectModel();
         $dm->ketnoi();
         $stmt = $dm->conn->prepare($sql);
@@ -18,8 +18,8 @@ class Dm_sp_M {
     }
 
     public function xoa($id) {
-        $sql = "DELETE FROM dm_sp WHERE id=$id";
-        include_once 'models/connectmodel.php';
+        $sql = "DELETE * FROM category WHERE id=$id";
+        include_once 'config/db.config.php';
         $dm = new ConnectModel();
         $dm->ketnoi();
         $stmt = $dm->conn->prepare($sql);
@@ -27,9 +27,9 @@ class Dm_sp_M {
         $dm->conn = null;
     }
 
-    public function laydm($id) {
-        $sql = "SELECT * FROM dm_sp WHERE id=$id";
-        include_once 'models/connectmodel.php';
+    public function category($id) {
+        $sql = "SELECT * FROM category WHERE id=$id";
+        include_once 'config/db.config.php';
         $dm = new ConnectModel();
         $dm->ketnoi();
         $stmt = $dm->conn->prepare($sql);
@@ -39,9 +39,9 @@ class Dm_sp_M {
         return $kq;
     }
 
-    public function capnhat($id, $tendm) {
-        $sql = "UPDATE dm_sp SET tendm='$tendm' WHERE id=$id";
-        include_once 'models/connectmodel.php';
+    public function capnhat($id, $name) {
+        $sql = "UPDATE dm_sp SET name='$name' WHERE id=$id";
+        include_once 'config/db.config.php';;
         $dm = new ConnectModel();
         $dm->ketnoi();
         $stmt = $dm->conn->prepare($sql);

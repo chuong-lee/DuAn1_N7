@@ -49,7 +49,7 @@ class Dm_sp_C {
                     $th = new Dm_sp_M();
                     $th->capnhat($id, $this->tendm);
                     $mangdm = $th->dsdm();
-                    include_once 'views/dm_sp.php';
+                    include_once 'views/capnhatdanhmuc.php';
                 }
                 break;
         }
