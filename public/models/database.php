@@ -35,17 +35,7 @@ class Database{
         $this->stmt->execute($param);
         return $this->stmt;
     }
-    //cũ
-    // public function getOne($sql) {
-    //     try {
-    //         $stmt = $this->conn->prepare($sql);
-    //         $stmt->execute();
-    //         return $stmt->fetch(PDO::FETCH_ASSOC);
-    //     } catch (PDOException $e) {
-    //         echo "Query failed: " . $e->getMessage();
-    //         return false;
-    //     }
-    // }
+    
     public function getOne($sql, $params = []) {
         try {
             // Prepare the SQL statement
@@ -80,6 +70,10 @@ class Database{
 
     function update($sql, $param){
         $this->query($sql, $param);
+    }
+
+    public function lastInsertId() {
+        return $this->conn->lastInsertId();
     }
 
 }

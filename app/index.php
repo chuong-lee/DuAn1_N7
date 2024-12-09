@@ -4,8 +4,10 @@ require_once '../config/importModel.php';
 require_once '../config/importController.php';
 
 $productController = new ProductController();
-$signin = new UserController();
-$cartDetail = new CartController();
+$userController = new UserController();
+$cartController = new CartController();
+$transactionController = new TransactionController();
+$orderController = new OrderController();
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
 
@@ -20,11 +22,11 @@ if (isset($_GET['page'])) {
             break;
 
         case 'dangNhap':
-            $signin->signinUser();
+            $userController->signinUser();
             break;
 
         case 'dangKy':
-            $signin->addUser();
+            $userController->addUser();
             break;
 
         case 'tintuc':
@@ -37,10 +39,10 @@ if (isset($_GET['page'])) {
         case 'gioithieu':
             $gioithieu = new gioithieuController();
             break;
-
+ 
         case 'thanhtoan':
-            $thanhtoan = new transaction();
-            $thanhtoan->renderView();
+            $transactionController -> getUserById();
+            $orderController->createdOrderProduct();
             break;
 
         case 'lienhe':
@@ -54,11 +56,12 @@ if (isset($_GET['page'])) {
             break;
 
         case 'gioHang':
-            $cartDetail->getProductToCart();
+            $cartController->getProductToCart();
+            $cartController->updateQuantityInCart();
             break;
 
         case 'delProductInCart':
-            $cartDetail->deleteProductInCart();
+            $cartController->deleteProductInCart();
             break;
 
         default:

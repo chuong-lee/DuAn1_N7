@@ -1,5 +1,4 @@
 <?php
-
 class ProductController
 {
     private $productModel;
@@ -60,9 +59,6 @@ class ProductController
 
     public function getProductByCategory()
     {
-        // b1 nhận request để lấy giá trị của cate 
-        // b2 lấy danh sách sản phẩm theo cate
-        // b3 đưa dữ liệu vào mảng dssp
         $data['dsdm'] = $this->categoryModel->getAllCategory();
         if (isset($_GET['id_danhmuc'])) {
             $id_danhmuc = $_GET['id_danhmuc'];
@@ -80,18 +76,35 @@ class ProductController
         }
     }
 
-    function addProductToCart(){
-        if(isset($_POST['addProductToCart'])){
+    function addProductToCart() {
+        if (isset($_POST['addProductToCart'])) {
             $data = [];
             $data['id_user'] = $_POST['id_user'] ?? '';
             $data['id_product'] = $_POST['id_product'] ?? '';
+    
             if (!empty($data['id_product']) && !empty($data['id_user'])) {
-                $this->cartModel->insertProductToCart($data);
-                echo '<script>alert("Thêm sản phẩm thành công")</script>';
+                $existingProduct = $this->cartModel->findProductInCart($data['id_product'], $data['id_user']);
+                $productData = $existingProduct->fetch(PDO::FETCH_ASSOC);
+                if ($productData) {
+                    $data['quantity'] = $productData['quantity'] + 1;
+                    $this->cartModel->updatedProductToCart($data);
+                    echo '<script>alert("Cập nhật sản phẩm thành công")</script>';
+                } else {
+                    if (is_array($_POST['id_product'])) {
+                        $productCount = array_count_values($_POST['id_product']);
+                        $data['quantity'] = $productCount[$data['id_product']] ?? 0;
+                    } else {
+                        $data['quantity'] = 1;
+                    }
+                    $this->cartModel->insertProductToCart($data);
+                    echo '<script>alert("Thêm sản phẩm thành công")</script>';
+                }
             } else {
                 echo '<script>location.href="index.php?page=dangNhap";</script>';
             }
         }
     }
+    
+    
 
 }

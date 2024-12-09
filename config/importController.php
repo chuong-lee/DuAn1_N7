@@ -8,6 +8,7 @@ require_once './controllers/user.controller.php';
 require_once './controllers/transaction.controller.php';
 require_once './controllers/contact.controller.php';
 require_once './controllers/cart.controller.php';
-
+require_once './controllers/transaction.controller.php';
+require_once './controllers/order.controller.php';
 
 ?>
