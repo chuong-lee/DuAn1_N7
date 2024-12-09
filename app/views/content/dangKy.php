@@ -14,31 +14,33 @@
                               <form class="user" method="POST">
                                   <div class="form-group row">
                                       <div class="col-sm-6 mb-3 mb-sm-0">
-                                          <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                                 placeholder="First Name">
+                                          <input type="text" class="form-control form-control-user" name="name"
+                                                 placeholder="Nhập họ và tên">
                                       </div>
                                       <div class="col-sm-6">
-                                          <input type="text" class="form-control form-control-user" id="exampleLastName"
-                                                 placeholder="Last Name">
+                                          <input type="text" class="form-control form-control-user" name="phone"
+                                                 placeholder="Nhập SĐT">
                                       </div>
                                   </div>
                                   <div class="form-group">
-                                      <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                      <input type="email" class="form-control form-control-user" name="email"
                                              placeholder="Email Address">
                                   </div>
                                   <div class="form-group row">
                                       <div class="col-sm-6 mb-3 mb-sm-0">
-                                          <input type="password" class="form-control form-control-user"
-                                                 id="exampleInputPassword" placeholder="Password">
+                                          <input type="password" class="form-control form-control-user" name="password" placeholder="Nhập mật khẩu">
                                       </div>
                                       <div class="col-sm-6">
-                                          <input type="password" class="form-control form-control-user"
-                                                 id="exampleRepeatPassword" placeholder="Repeat Password">
+                                          <input type="password" class="form-control form-control-user" name="confirm-password" placeholder="Nhập lại mật khẩu">
                                       </div>
                                   </div>
-                                  <a href="login.html" class="btn btn-primary btn-user btn-block">
+                                  <div class="form-group">
+                                      <input type="text" class="form-control form-control-user" name="address"
+                                             placeholder="Nhập địa chỉ">
+                                  </div>
+                                  <button class="btn btn-primary btn-user btn-block" name="register">
                                       Register Account
-                                  </a>
+                                  </button>
                                   <hr>
                                   <a href="index.html" class="btn btn-google btn-user btn-block">
                                       <i class="fab fa-google fa-fw"></i> Register with Google
