@@ -53,5 +53,6 @@ class CartModel{
         $sql = "SELECT * FROM cartdetail WHERE id_product = ? AND id_user = ?";
         return $this->db->query($sql, [$productId, $userId]);
     }
+
 }
 ?>

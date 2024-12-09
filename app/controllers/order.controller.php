@@ -1,6 +1,7 @@
 <?php
 class OrderController{
     private $orderModel;
+    private $cartModel;
     private $orderDetailModel;
 
     public $data = [];
@@ -8,6 +9,7 @@ class OrderController{
     {
         $this->orderModel = new OrderModel();
         $this->orderDetailModel = new OrderDetailModel();
+        $this->cartModel = new CartModel();
     }
     function renderView($data, $view)
     {
@@ -22,25 +24,32 @@ class OrderController{
         }
     }
 
+    // khi người dùng nhấn đặt hàng sẽ truyền id_user vào order và khởi tạo
+    // b2 nó sẽ lấy cái id_order đem truyền xuống câu sql để thực việc thêm orderDetail
+    
     function createdOrderProduct() {
         if (isset($_POST['orderProduct'])) {
             $data = [];
-            $data['id_user'] = $_GET['id_user'] ?? '';
-            if(!empty(($data['id_user']))){
-                $this->orderModel->insertOrder($data);
-            }
-            $data['id_order'] = $_POST['id_order'] ?? '';
-            // $existOrder = $this->orderModel->findOrderById($data['id_order']);
-            // if($existOrder){
-            //     $data['id_product'] = $_POST['id_product'] ?? '';
-            //     $data['quantity'] = $_POST['quantity'] ?? '';
-            //     if (!empty($data['id_product']) && !empty($data['quantity'])) {
-            //         $this->orderDetailModel->insertOrderDetail($data);
-            //         echo '<script>alert("Đặt hàng thành công")</script>';
-            //     }
+            $data['id_user'] = $_GET['userId'] ?? '';
+            
+            if (!empty($data['id_user'])) {
+                $id_order = $this->orderModel->insertOrder($data);
+                $data['id_order'] = $id_order;
 
-            // }
+                if (is_array($_POST['productId']) && is_array($_POST['quantity'])) {
+                    foreach ($_POST['productId'] as $index => $id_product) {
+                        $data['id_product'] = $id_product;
+                        $data['quantity'] = $_POST['quantity'][$index];
+                        $this->orderDetailModel->insertOrderDetail($data);
+                        $this->cartModel->deleteProductInCart($id_product);
+                    }
+                    echo '<script>alert("Đặt hàng thành công")</script>';
+                } else {
+                    echo '<script>alert("Dữ liệu sản phẩm không hợp lệ")</script>';
+                }
+            }
         }
     }
+    
 }
 ?>
