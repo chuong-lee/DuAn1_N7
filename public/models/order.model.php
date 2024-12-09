@@ -9,7 +9,8 @@ class OrderModel{
     public function insertOrder($data) {
         $sql = "INSERT INTO `order` (id_user) VALUES (?)";
         $params = [$data['id_user']];
-        return $this->db->insert($sql, $params);
+        $this->db->insert($sql, $params);
+        return $this->db->lastInsertId(); // Lấy id của đơn hàng vừa được thêm
     }
     
 
