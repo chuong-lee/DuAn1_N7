@@ -10,30 +10,51 @@
                 </ol>
                 <div class="row gy-5">
                     <?php
-                    $trsp = '';
-                    foreach ($sp->mangsp as $key => $value) {
-                        $trsp .= '
-                                    <div class="col-lg-4 col-md-6">
-                                        <div class="border border-light border-1 rounded-3 hvr-float">
-                                            <div class="w-100 p-2">
-                                            <div class="post-img w-100"><img class="img-fluid w-100 rounded-3" src="../public/client/images/blog/blog-'.$value['id'].'.jpg" alt=""></div>
+                        $trsp = '';
+                        foreach ($sp->mangsp as $key => $value) {
+                            // Kiểm tra dữ liệu trước khi sử dụng
+                            $id = htmlspecialchars($value['id'] ?? '');
+                            $title = htmlspecialchars($value['title'] ?? '');
+                            $created_at = htmlspecialchars($value['created_at'] ?? '');
+
+                            $trsp .= '
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="border border-light border-1 rounded-3 hvr-float">
+                                        <div class="w-100 p-2">
+                                            <!-- Hình ảnh bài viết -->
+                                            <div class="post-img w-100">
+                                                <img class="img-fluid w-100 rounded-3" 
+                                                     src="../public/client/images/blog/blog-' . $id . '.jpg" 
+                                                     alt="' . $title . '">
+                                            </div>
+                            
+                                            <!-- Thông tin bài viết -->
                                             <div class="meta-top">
                                                 <ul class="p-0 text-start">
-                                                <li class="d-flex align-items-center"><a class="text-black" href="index.php?page=ctbaiviet&id='.$value['id'].'">Xem</a></li>
-                                                <li class="d-flex align-items-center"><i class="bi bi-dot"></i><a class="text-black" href="">
-                                                    <time datetime="2022-01-01">'.$value['created_at'].'</time></a></li>
+                                                    <li class="d-flex align-items-center">
+                                                        <a class="text-black" href="index.php?page=ctbaiviet&id=' . $id . '">Xem</a>
+                                                    </li>
+                                                    <li class="d-flex align-items-center">
+                                                        <i class="bi bi-dot"></i>
+                                                        <a class="text-black" href="">
+                                                            <time datetime="' . $created_at . '">' . $created_at . '</time>
+                                                        </a>
+                                                    </li>
                                                 </ul>
                                             </div>
-                                        <p class="title text-start text-black fs-4 text-truncate" style="max-width: 200px;"">'.$value['title'].'</p>
-                                    <div class="btn btn-primari p-3 hvr-float">READ MORE</div>
+                            
+                                            <!-- Tiêu đề bài viết -->
+                                            <p class="title text-start fs-4 text-clamp">' . $title . '</p>
+                            
+                                            <!-- Nút hành động -->
+                                            <div class="btn btn-primari p-3 hvr-float">READ MORE</div>
+                                        </div>
                                     </div>
                                 </div>
-                                </div>
                             ';
-                    }
-                    echo $trsp;
+                        }
+                        echo $trsp;
                     ?>
-
                 </div>
             </div>
         </div>
