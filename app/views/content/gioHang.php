@@ -30,7 +30,7 @@
                             $image = $product['image'] ?? 'default.jpg';
                             $tendanhmuc = $product['tendanhmuc'] ?? 'default';
 
-                            $formattedName = str_replace(' ', '', $tendanhmuc);
+                            
                             $totalPrice = $price * $quantity;
                             $tongTien += $totalPrice;
 

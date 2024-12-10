@@ -54,7 +54,6 @@
                                 foreach ($listProduct as $product) {
                                     // print_r($product);
                                     extract($product);
-                                    $formattedName = str_replace(' ', '', $tendanhmuc);
                                     $totalPrice = $quantity * $price;
                                     $tongTien += $totalPrice;
                                     echo '<div class="checkout-order-products d-flex justify-content-between align-items-center fw-bold fs-5 mb-3">
@@ -90,42 +89,7 @@
             </div>
         </div>
         </div>
-        <!-- <script>
-            async function loadDistricts() {
-                const province = document.getElementById('province').value;
-
-                if (!province) return;
-
-                const response = await fetch(`/api/get-districts?province=${province}`);
-                const districts = await response.json();
-
-                const districtSelect = document.getElementById('district');
-                districtSelect.innerHTML = '<option value="" hidden>Chọn Quận/Huyện</option>';
-                districts.forEach((district) => {
-                    districtSelect.innerHTML += `<option value="${district}">${district}</option>`;
-                });
-
-
-                document.getElementById('ward').innerHTML =
-                    '<option value="" hidden>Chọn Phường/Xã</option>';
-            }
-
-            async function loadWards() {
-                const district = document.getElementById('district').value;
-
-                if (!district) return;
-
-                const response = await fetch(`/api/get-wards?district=${district}`);
-                const wards = await response.json();
-
-                const wardSelect = document.getElementById('ward');
-                wardSelect.innerHTML = '<option value="" hidden>Chọn Phường/Xã</option>';
-                wards.forEach((ward) => {
-                    wardSelect.innerHTML += `<option value="${ward}">${ward}</option>`;
-                });
-            }
-
-        </script> -->
+        
         <script>
             function validateForm() {
                 const productIds = document.querySelectorAll('input[name="productId[]"]');

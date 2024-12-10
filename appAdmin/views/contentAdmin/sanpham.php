@@ -21,7 +21,6 @@
             foreach ($showPro as $product){
                 // print_r($product);
                 extract($product);
-                $formattedName = str_replace(' ', '', $tendanhmuc);
                 echo '<tr>
                 <td>'.$name.'</td>
                 <td>'.$price.'</td>

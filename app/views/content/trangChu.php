@@ -24,7 +24,6 @@
             foreach ($listProducts as $product) {
               // print_r($product);
               extract($product);
-              $formattedName = str_replace(' ', '', $tendanhmuc);
               echo '
               <div class="col-md-3 col-lg-3 py-3 wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="0.3s">
                           <div class="card team-card hvr-float">
@@ -40,7 +39,6 @@
                     </div>
                     <div class="line-team d-flex text-start my-2">
                       <h4 class="text-highline ms-3 mb-0">' . $price . ' VNĐ</h4>
-                      <p class="ms-3 text-decoration-line-through mb-0">' . $sale_price . ' VNĐ</p>
                     </div>
                     <div class="align-items-center text-start mx-3 mb-2">
                       <button class="btn btn-submit text-white" type="submit"><a href="index.php?page=chiTietSp&id=' . $id_product . '">Mua ngay</a></button>
@@ -83,7 +81,6 @@
             $listProductsByCate = $data['sptdm'];
             foreach ($listProductsByCate as $product) {
               extract($product);
-              $formattedName = str_replace(' ', '', $tendanhmuc);
               echo '<div class="col-lg-3 col-md-4 col-sm-6">
               <div class="featured-item mb-4">
                 <div class="featured-item-pic set-bg" data-setbg><img src="' . $image . '">
@@ -189,7 +186,6 @@
             $listProductsByCate = $data['sptrending'];
             foreach ($listProductsByCate as $product) {
               extract($product);
-              $formattedName = str_replace(' ', '', $tendanhmuc);
               echo '<div class="col-sm-4 col-lg-4">
               <div class="shirt-new-product"><a class="product-roll" href=""><img class="shirt-img w-100" data-sizes="auto" src="'.$image.'" data-src="" alt="Áo Sơ Mi"></a></div>
               <div class="shirt-img-Home align-items-center text-start">

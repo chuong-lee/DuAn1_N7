@@ -43,9 +43,6 @@
                                     foreach ($listProducts as $product) {
                                         // print_r($product);
                                         extract($product);
-                                        $formattedName = str_replace(' ', '', $tendanhmuc);
-                                        $salePercent = (($price - $sale_price) / $price) * 100;
-                                        $ceiled = ceil($salePercent);
                                             echo '
                                             <div class="col-md-6 col-lg-4 col-xl-3">
                                             <form method="POST">
@@ -67,15 +64,13 @@
                                                             
                                                             <!-- Giá sản phẩm -->
                                                             <div class="d-flex justify-content-center align-items-center gap-2">
-                                                                <del>' . number_format($price, 0, ',', '.'). 'đ</del>
-                                                                <span class="text-dark fw-semibold">' . number_format($sale_price, 0, ',', '.') . 'đ</span>
-                                                                <span class="badge border border-dark-subtle rounded-0 fw-normal px-1 fs-7 lh-1 text-body-tertiary">' . $ceiled . '% OFF</span>
+                                                                <span class="text-dark fw-semibold">' . number_format($price, 0, ',', '.') . 'đ</span>
                                                             </div>
                                                             <input type="hidden" value="' . $id_product . '" name="id_product">
                                                             <input type="hidden" value="" class="user-id" name="id_user">
                                                             <!-- Hành động -->
                                                             <div class="d-flex justify-content-between mt-2">
-                                                                <a class="btn rounded-pill p-2 btn-apply" href="detail.html">
+                                                                <a class="btn rounded-pill p-2 btn-apply" href="index.php?page=chiTietSp&id= '.$id_product.'">
                                                                     <i class="fa-solid fa-magnifying-glass"></i> Xem Nhanh
                                                                 </a>
                                                                 <button class="btn rounded-pill p-2 btn-apply" name="addProductToCart">

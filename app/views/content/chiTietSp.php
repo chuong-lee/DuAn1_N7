@@ -4,7 +4,6 @@
     <?php
     // print_r($data['productDetail']);
     extract($data['productDetail']);
-    $formattedName = str_replace(' ', '', $tendanhmuc);
     echo '<div class="row">
       <div class="custom-div">
         <div class="row">
