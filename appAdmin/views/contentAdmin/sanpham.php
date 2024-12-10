@@ -1,6 +1,6 @@
 <div class="container my-4">
     <h2 class="text-center mb-4">Danh sách sản phẩm</h2>
-    <div class="add-products " style="float: right;">
+    <div class="add-products mb-5" style="float: right;">
     <button class="btn btn-primary " ><a href="indexAdmin.php?page=addProducts" style="color: #fff;">Thêm sản phẩm</a></button>
     </div>
     <div class="table-container" style="margin-top: 15px;">
@@ -28,7 +28,9 @@
                 <td><figure><a href="" title="Product Title"><img class="card-img-topimg w-100" src="' . $image . '"></a></figure></td>
                 <td>'.$quantity.'</td>
                 <td>'.$buying.'</td>
-                <td><button type="button" class="btn btn-success"><a href="indexAdmin.php?page=editpro&id='.$id_product.'">Sửa</a></button><button type="button" class="btn btn-danger"><a href="indexAdmin.php?page=delpro&id='.$id_product.'">Xóa</a></button></td>
+                <td class="text-center">
+                <button type="button" class="btn btn-success"><a style="color:#fff;" href="indexAdmin.php?page=editProducts&id='.$id_product.'">Sửa</a></button>
+                <button type="button" class="btn btn-danger"><a style="color:#fff;" href="indexAdmin.php?page=delpro&id='.$id_product.'">Xóa</a></button></td>
             </tr>';
             }
             ?>

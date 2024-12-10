@@ -77,5 +77,24 @@ class ProductModel
         $param = [$data['name'],$data['price'],$data['description'],$data['quantity'],$data['image'],$data['sale_price'],$data['id_cate']];
         return $this->db->insert($sql, $param);
     }
+
+    function updatePro($data){
+        $sql = "UPDATE product SET name = ?, price = ?, description = ?,quantity = ?, image = ?,sale_price = ?, id_cate = ? WHERE id = ?";
+        $param = [$data['name'],$data['price'],$data['description'],$data['quantity'],$data['image'],$data['sale_price'],$data['id_cate'], $data['id']];
+        $this->db->insert($sql,$param);
+    }
     
+    function getIdPro($idpro){
+        if($idpro > 0){
+            $sql = "SELECT * FROM product WHERE id = " . $idpro;
+            return $this->db->getOne($sql);
+        }else{
+            return null;
+        }
+    }
+
+    function deletePro($id) {
+        $sql = "DELETE FROM product WHERE id = ?";
+        return $this->db->delete($sql,[$id]);
+    }
 }

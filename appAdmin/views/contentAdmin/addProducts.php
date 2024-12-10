@@ -1,3 +1,4 @@
+<h1>Thêm mới sản phẩm</h1>
 <form method="POST" enctype="multipart/form-data">
     <div class="form-group">
         <label>Tên sản phẩm</label>
@@ -37,7 +38,7 @@
     ?>
       
     </select>
-    <input type="text" id="tendanhmuc" name="tendanhmuc" value="">
+    <input type="hidden" id="tendanhmuc" name="tendanhmuc" value="">
   </div>
     
 
@@ -51,6 +52,12 @@
 </form>
 
 <script>
+document.addEventListener('DOMContentLoaded', function() {
+    var categorySelect = document.getElementById('category');
+    var defaultCategoryName = categorySelect.options[categorySelect.selectedIndex].text;
+    document.querySelector('#tendanhmuc').value = defaultCategoryName;
+});
+
 document.getElementById('category').addEventListener('change', function() {
     var selectedCategoryName = this.options[this.selectedIndex].text;
     document.querySelector('#tendanhmuc').value = selectedCategoryName;
