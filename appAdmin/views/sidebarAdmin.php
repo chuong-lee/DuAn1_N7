@@ -1,4 +1,4 @@
-<div class="flex-shrink-1 d-none d-lg-block">
+<div class="flex-shrink-1 d-none d-lg-block col-md-3">
     <div class="menu">
         <div class="offcanvas-header p-0"><img class="w-100" src="../public/client/images/logo-vp.png"></div>
         <div class="offcanvas-body pt-4">
@@ -7,14 +7,12 @@
                     <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
                     <div class="sidebar-brand-text mx-3 fs-5"> Admin</div>
                 </a>
-                <!-- Nav Item - Dashboard-->
-                <li class="nav-item active"><a class="nav-link" href=""><i class="fas fa-fw fa-tachometer-alt"></i><span>Dashboard</span></a></li>
-                <!-- Nav Item - Pages Collapse Menu-->
+                
                 <li class="nav-item"><a class="nav-link collapsed hvr-forward py-3" href="#" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"><i class="fas fa-fw fa-cog"></i><span>Custom Product</span></a>
                     <div class="collapse mx-2" id="collapseTwo" aria-labelledby="headingTwo" data-bs-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded-3 mx-2">
                             <h6 class="collapse-header">Custom Product:</h6>
-                            <a class="collapse-item ms-2" href="indexAdmin.php?page=capnhatsanpham">Add Product</a>
+                            <a class="collapse-item ms-2" href="indexAdmin.php?page=sanpham">Add Product</a>
                             <a class="collapse-item ms-2" href="indexAdmin.php?page=capnhatdanhmuc">Add Category</a>
                         </div>
                     </div>
