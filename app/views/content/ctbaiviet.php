@@ -7,25 +7,23 @@
                     <li class="breadcrumb-item"><a href="index.php?page=tintuc">Tin Tức</a></li>
                 </ol>
                 <div class="row gy-5">
-                    <div class="col-lg-4 col-md-6">
-                    <?php
-                        if (!empty($article)) {
-                            // Thay thế các tiêu đề phụ bắt đầu bằng '##' với thẻ <strong> để in đậm
-                            $content = nl2br($article['content']); // Chuyển các xuống dòng thành <br>
-
-                            // Ví dụ: Tìm tất cả các tiêu đề phụ bắt đầu bằng '##' và bao bọc chúng trong <strong>
-                            $content = preg_replace('/^## (.*?)$/m', '<strong>$1</strong>', $content);
-
-                            echo '
-                                <p>Tác giả: ' . $article['author'] . '</p>
-                                <div>' . $article['title'] . '</div>
-                                <p>Nội dung: ' . $content . '</p>
-                                <p>Lượt Xem: ' . (int)$article['views'] . '</p>
-                            ';
-                        } else {
-                            echo '<p>Không có bài viết nào để hiển thị.</p>';
-                        }
+                <div class="col-lg-8 col-md-12 mx-auto ">
+                <?php
+                    if (!empty($article)) {
+                        $content = nl2br($article['content']); 
+                        $content = preg_replace('/^## (.*?)$/m', '<strong>$1</strong>', $content);
+                        echo '
+                            <p><strong>Tác giả:</strong> ' . htmlspecialchars($article['author']) . '</p>
+                            <h2>' . htmlspecialchars($article['title']) . '</h2>
+                            <div>' . $content . '</div>
+                            <p><strong>Lượt Xem:</strong> ' . (int)$article['views'] . '</p>
+                        ';
+                    } else {
+                        echo '<p>Không có bài viết nào để hiển thị.</p>';
+                    }
                     ?>
+
+                    </div>                   
                     </div>
                 </div>
             </div>
