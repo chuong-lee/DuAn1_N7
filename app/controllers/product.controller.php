@@ -69,7 +69,6 @@
             }
             if (is_array($allProducts)) {
                 $data['products'] = $allProducts;
-                // $data['currentUser'] = $this->userModel->getUser();
                 $this->renderView($data, 'sanPham');
             } else {
                 echo "Không tìm thấy sản phẩm ";
