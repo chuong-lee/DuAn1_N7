@@ -1,5 +1,4 @@
     <?php
-
     class OrderDetailModel
     {
         private $db;
@@ -14,8 +13,7 @@
             return $this->db->insert($sql, $params);
         }
         public function getOrderDetail($userId, $status)
-        {
-            $sql = 'SELECT p.name, p.price, p.image, o.quantity, o2.status, o2.id, o2.id_user,  c.name as tenDanhMuc 
+        {       $sql = 'SELECT p.name, p.price, p.image, o.quantity, o2.status, o2.id, o2.id_user,  c.name as tenDanhMuc 
                 FROM product p 
                 JOIN orderdetail o ON o.id_product = p.id 
                 JOIN `order` o2 ON o2.id = o.id_order 
@@ -23,5 +21,5 @@
                 WHERE o2.id_user = ? AND o2.status = ?';
             return $this->db->getAllInfoOrder($sql, [$userId, $status]);
         }
-    }
+        }
     ?>
