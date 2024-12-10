@@ -32,7 +32,7 @@
                         
                         </script>';
                         if ($user['id_role'] == 1) {
-                            echo '<script>location.href="indexAdmin.php";</script>';
+                            echo '<script>location.href="/FPT_POLY/DU_AN1_N7/appAdmin/indexAdmin.php";</script>';
                         } elseif ($user['id_role'] == 2) {
                             echo '<script>location.href="index.php";</script>';
                         }

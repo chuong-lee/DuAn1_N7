@@ -1,6 +1,5 @@
 <section>
     <link rel="stylesheet" href="<?php echo '../public/client/css/trangChu.css'; ?>">
-    <?php require_once 'banner.header.php'; ?>
 
     <div class="login">
         <div class="container custom-login-container">
