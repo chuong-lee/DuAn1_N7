@@ -170,39 +170,7 @@
       ?>
     </div>
   </div>
-  <div class="shirt my-5 pb-4" id="shirt">
-    <div class="shirt-new">
-      <div class="container">
-        <div class="wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="0.3s">
-          <div class="justify-content-center my-5 w-100">
-            <div class="text-center justify-content-center mb-2">
-              <div class="page-title">
-                <h1 class="text-center service-title text-uppercase color-titlel">Sản Phẩm Mới Trend</h1>
-                <div class="fs-5 text-center service-title text-uppercase text-while justify-content-center"> Meet of Professionals</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <?php
-          $listProductsByCate = $data['sptrending'];
-          foreach ($listProductsByCate as $product) {
-            extract($product);
-            $formattedName = str_replace(' ', '', $tendanhmuc);
-            echo '<div class="col-sm-4 col-lg-4">
-            <div class="shirt-new-product"><a class="product-roll" href=""><img class="shirt-img w-100" data-sizes="auto" src="../public/client/images/danhmuc/'.$formattedName.'/'.$image.'" data-src="" alt="Áo Sơ Mi"></a></div>
-            <div class="shirt-img-Home align-items-center text-start">
-              <h2><a href="" target="_self">'.$name.'</a></h2><a class="shirt-img-View btn-buy" href="" target="_self">
-                Xem
-                Chi Tiet</a>
-            </div>
-          </div>';
-          }
-          ?>
-        </div>
-      </div>
-    </div>
-  </div>
+  
 </section>
 <script>
   function handleClick(id) {
