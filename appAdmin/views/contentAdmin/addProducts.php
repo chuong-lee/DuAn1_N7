@@ -5,7 +5,7 @@
     </div>
     <div class="form-group">
         <label>Giá</label>
-        <input type="number" class="form-control" name="">
+        <input type="number" class="form-control" name="price">
     </div>
     <div class="form-group">
         <label>Mô tả</label>
