@@ -14,5 +14,12 @@ class CategoryModel
         return $result;
     }
 
+    public function getCategoryById($idCate)
+    {
+        $sql = "SELECT name FROM category WHERE id = ". $idCate;
+        $result = $this->db->getOne($sql);
+        return $result;
+    }
+
     
 }

@@ -63,6 +63,10 @@ if (isset($_GET['page'])) {
         case 'delProductInCart':
             $cartController->deleteProductInCart();
             break;
+        
+        case 'orderInfo':
+            $orderController->getOrderDetail();
+            break;
 
         default:
             $home = new HomeController();

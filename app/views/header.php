@@ -83,7 +83,7 @@
               <span id="name-user"></span>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item" href="#">Thông tin người dùng</a></li>
-                <li><a class="dropdown-item" href="#">Thông tin đơn hàng</a></li>
+                <li><a class="dropdown-item" href="index.php?page=orderInfo">Thông tin đơn hàng</a></li>
                 <li><a class="dropdown-item" id="logout" href="#">Đăng xuất</a></li>
               </ul>
             </div>

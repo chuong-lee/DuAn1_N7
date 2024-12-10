@@ -34,16 +34,6 @@ class TransactionController
 
     }
 
-    // function getProductToCart()
-    // {
-        
-    //     $userId = 4;
-    //     $cartProduct = $this->cartModel->getProductByUserId($userId);
-    //     if ($cartProduct) {
-    //         $data['cartProduct'] = $cartProduct; // Đảm bảo mảng luôn tồn tại
-    //         $this->renderView($data, 'thanhtoan');
-    //     }
-    // }
 
 }
 ?>

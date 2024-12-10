@@ -50,6 +50,19 @@ class OrderController{
             }
         }
     }
+
+    
+    function getOrderDetail(){
+        $userId = 4;
+        $status = 'pending';
+        $orderId = $this->orderDetailModel->getOrderDetail($userId, $status);
+        if($orderId){
+            $data['orderDetails'] = $orderId;
+            $this->renderView($data, 'orderInfo');
+        }else{
+            echo 'Chưa có đơn hàng nào được xử lý';
+        }
+    }
     
 }
 ?>

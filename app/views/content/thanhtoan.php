@@ -59,14 +59,14 @@
                                 $tongTien += $totalPrice;
                                 echo '<div class="checkout-order-products d-flex justify-content-between align-items-center fw-bold fs-5 mb-3">
                                     <div class="d-flex align-items-center">
-                                        <img src="../public/client/images/danhmuc/' . $formattedName . '/' . $image . '" alt=""
+                                        <img src="' . $image . '" alt=""
                                             style="width:50px; height:50px">
                                         <span class="ml-2">' . $name . '</span>
                                     </div>
                                     <div>' . $quantity . '</div>
                                     <div>' . $totalPrice . '</div>
-                                    <input type="text" value="' . $id_product . '" name="productId[]">
-                                    <input type="text" value="' . $quantity . '" name="quantity[]">
+                                    <input type="hidden" value="' . $id_product . '" name="productId[]">
+                                    <input type="hidden" value="' . $quantity . '" name="quantity[]">
                                 </div>';
                             }
                             echo '

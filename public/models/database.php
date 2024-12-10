@@ -76,5 +76,16 @@ class Database{
         return $this->conn->lastInsertId();
     }
 
+    public function getAllInfoOrder($sql, $params = []){
+        try {
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute($params);
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo "Query failed: " . $e->getMessage();
+            return false;
+        }
+    }
+
 }
 ?>

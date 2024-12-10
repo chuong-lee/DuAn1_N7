@@ -51,7 +51,7 @@
               <form method="POST">
                 <div class="col p-3">
                   <div class="product-item">
-                    <figure><a href="" title="Product Title"><img class="card-img-topimg w-100" src="../public/client/images/danhmuc/' . $formattedName . '/' . $image . '"></a></figure>
+                    <figure><a href="" title="Product Title"><img class="card-img-topimg w-100" src="' . $image . '"></a></figure>
                     <div class="d-flex flex-column text-center">
                       <h3 class="fs-6 fw-normal">' . $name . '</h3>
                       <div><span class="rating d-flex justify-content-center">

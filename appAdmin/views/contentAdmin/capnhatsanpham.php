@@ -25,7 +25,7 @@
                 echo '<tr>
                 <td>'.$name.'</td>
                 <td>'.$price.'</td>
-                <td><figure><a href="" title="Product Title"><img class="card-img-topimg w-100" src="../public/client/images/danhmuc/' . $formattedName . '/' . $image . '"></a></figure></td>
+                <td><figure><a href="" title="Product Title"><img class="card-img-topimg w-100" src="' . $image . '"></a></figure></td>
                 <td>'.$quantity.'</td>
                 <td>'.$buying.'</td>
                 <td><button type="button" class="btn btn-success"><a href="indexAdmin.php?page=editpro&id='.$id_product.'">Sửa</a></button><button type="button" class="btn btn-danger"><a href="indexAdmin.php?page=delpro&id='.$id_product.'">Xóa</a></button></td>

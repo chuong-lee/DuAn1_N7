@@ -22,13 +22,14 @@
           <?php
           $listProducts = $data['dssp'];
           foreach ($listProducts as $product) {
+            // print_r($product);
             extract($product);
             $formattedName = str_replace(' ', '', $tendanhmuc);
             echo '
             <div class="col-md-3 col-lg-3 py-3 wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="0.3s">
                         <div class="card team-card hvr-float">
                         <div class="card-body">
-                    <div class="card-img w-100 justify-content-center team-banner"><img class="team-img w-100" src="../public/client/images/danhmuc/' . $formattedName . '/' . $image . '"></div>
+                    <div class="card-img w-100 justify-content-center team-banner"><img class="team-img w-100" src="' . $image . '"></div>
                     <div class="pt-2 text-start d-flex align-items-center"><i class="fa-solid fa-user"></i>
                         <p class="mb-0 mx-3">' . $buying . ' Buying</p>
                     </div>
@@ -85,7 +86,7 @@
             $formattedName = str_replace(' ', '', $tendanhmuc);
             echo '<div class="col-lg-3 col-md-4 col-sm-6">
             <div class="featured-item mb-4">
-              <div class="featured-item-pic set-bg" data-setbg><img src="../public/client/images/danhmuc/' . $formattedName . '/' . $image . '">
+              <div class="featured-item-pic set-bg" data-setbg><img src="' . $image . '">
                 <ul class="featured-item-pic-hover">
                   <li class="featured-item-list"><a href="#"><i class="fa fa-heart"></i></a></li>
                   <li class="featured-item-list"><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -190,7 +191,7 @@
             extract($product);
             $formattedName = str_replace(' ', '', $tendanhmuc);
             echo '<div class="col-sm-4 col-lg-4">
-            <div class="shirt-new-product"><a class="product-roll" href=""><img class="shirt-img w-100" data-sizes="auto" src="../public/client/images/danhmuc/'.$formattedName.'/'.$image.'" data-src="" alt="Áo Sơ Mi"></a></div>
+            <div class="shirt-new-product"><a class="product-roll" href=""><img class="shirt-img w-100" data-sizes="auto" src="'.$image.'" data-src="" alt="Áo Sơ Mi"></a></div>
             <div class="shirt-img-Home align-items-center text-start">
               <h2><a href="" target="_self">'.$name.'</a></h2><a class="shirt-img-View btn-buy" href="" target="_self">
                 Xem

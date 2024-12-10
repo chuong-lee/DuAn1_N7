@@ -132,34 +132,43 @@ class ProductAdminController
     public function addPro() {
         $data = [];
         if (isset($_POST['addPro'])) {
-            $data['id_danhmuc'] = $_POST['id_danhmuc'] ?? null;
+            $data['id_cate'] = $_POST['id_cate'] ?? null;
             $data['name'] = $_POST['product-name'] ?? '';
             $data['price'] = $_POST['price'] ?? 0;
             $data['quantity'] = $_POST['quantity'] ?? 0;
             $data['description'] = $_POST['description'] ?? '';
-            $data['sale_price'] = $_POST['sale_price'] ?? 0; 
-            $data['image'] = $_FILES['image']['name'] ?? '';
+            $data['sale_price'] = $_POST['sale_price'] ?? 0;
             $tendanhmuc = $_POST['tendanhmuc'] ?? 'default';
-    
+            $formatTenDanhMuc = str_replace(' ', '', $tendanhmuc);
             // Tạo đường dẫn lưu ảnh theo tên danh mục
-            $uploadDir = "../public/client/images/danhmuc/{$tendanhmuc}/";
-            if (!is_dir($uploadDir)) {
-                mkdir($uploadDir, 0777, true);
-            }
+            // Kiểm tra nếu có file ảnh được tải lên
+            if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
+                $data['image'] = $_FILES['image']['name'] ?? ''; // Lấy tên file ảnh
+                $uploadDir = "../public/client/images/danhmuc/{$formatTenDanhMuc}/";
+                echo '$uploadDir'. $uploadDir;
+                if (!is_dir($uploadDir)) {
+                    mkdir($uploadDir, 0777, true);
+                }
     
-            // Lưu file vào thư mục tương ứng
-            $file = $uploadDir . basename($data['image']);
-            if (move_uploaded_file($_FILES['image']['tmp_name'], $file)) {
-                // Lưu đường dẫn ảnh vào cơ sở dữ liệu
-                $data['image'] = "{$uploadDir}{$data['image']}";
-                $this->productModel->insertPro($data);
-                echo '<script>alert("Thêm sản phẩm thành công!");</script>';
-                echo '<script>location.href="indexAdmin.php?page=capnhatsanpham";</script>';
+                // Đường dẫn lưu file ảnh
+                $file = $uploadDir . basename($data['image']);
+    
+                // Di chuyển ảnh vào thư mục lưu trữ
+                if (move_uploaded_file($_FILES['image']['tmp_name'], $file)) {
+                    // Lưu đường dẫn ảnh vào cơ sở dữ liệu
+                    $data['image'] = "{$uploadDir}{$data['image']}";
+                    $this->productModel->insertPro($data);
+                    echo '<script>alert("Thêm sản phẩm thành công!");</script>';
+                    echo '<script>location.href="indexAdmin.php?page=capnhatsanpham";</script>';
+                } else {
+                    echo '<script>alert("Không thể tải lên hình ảnh. Vui lòng thử lại.");</script>';
+                }
             } else {
-                echo '<script>alert("Không thể tải lên hình ảnh. Vui lòng thử lại.");</script>';
+                echo '<script>alert("Vui lòng chọn một hình ảnh để tải lên.");</script>';
             }
         }
     }
+    
     
 
 }

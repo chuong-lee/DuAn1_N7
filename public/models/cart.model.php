@@ -23,8 +23,7 @@ class CartModel{
         $sql = "SELECT c.id_product, SUM(c.quantity) AS quantity, p.price, p.image, p.name, c2.name AS tendanhmuc
         FROM cartdetail c
         JOIN product p ON c.id_product = p.id 
-        JOIN productcategory p2 ON p.id = p2.id_product 
-        JOIN category c2 ON p2.id_cate = c2.id 
+        JOIN category c2 ON p.id_cate = c2.id 
         WHERE c.id_user = ".$userId."
         GROUP BY c.id_product, p.price, p.image, p.name, c2.name;";
 
@@ -35,8 +34,7 @@ class CartModel{
         $sql = "SELECT c.id_product, SUM(c.quantity) AS quantity, p.price, p.image, p.name, c2.name AS tendanhmuc, u.name , u.email , u.phone , u.phone 
         FROM cartdetail c
         JOIN product p ON c.id_product = p.id 
-        JOIN productcategory p2 ON p.id = p2.id_product 
-        JOIN category c2 ON p2.id_cate = c2.id 
+        JOIN category c2 ON p.id_cate = c2.id 
         join `user` u ON u.id = c.id_user 
         WHERE c.id_user = ".$userId."
         GROUP BY c.id_product, p.price, p.image, p.name, c2.name;";

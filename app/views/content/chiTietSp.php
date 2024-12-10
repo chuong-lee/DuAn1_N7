@@ -10,7 +10,7 @@
       <div class="row">
         <div class="column anh-sp">
           <div class="san-pham">
-            <img src="../public/client/images/danhmuc/' . $formattedName . '/' . $image . '" alt="#">
+            <img src="' . $image . '" alt="#">
 
           </div>
         </div>

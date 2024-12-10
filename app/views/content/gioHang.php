@@ -35,7 +35,7 @@
                                         $formattedName = str_replace(' ', '', $tendanhmuc);
                                         $totalPrice = $price * $quantity;
                                         echo '<tr>
-                                        <td class="py-3 table-img"><img class="w-100" src="../public/client/images/danhmuc/' . $formattedName . '/' . $image . '"></td>
+                                        <td class="py-3 table-img"><img class="w-100" src="' . $image . '"></td>
                                         <form method="POST">
                                             <td class="py-3 text-center text-highline-2 fw-bold">' . $name . '
                                             <input type="hidden" value="' . $id_product . '" name="id_product">
@@ -195,7 +195,6 @@
                     newTongTien += parseInt(item.innerText)
                 });
                 tongTienElement.innerText = newTongTien;
-
             } else {
                 console.error(`One or more elements are missing for product ID: ${id_product}`);
             }
