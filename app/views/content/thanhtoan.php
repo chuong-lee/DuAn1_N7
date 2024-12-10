@@ -79,7 +79,7 @@
                                     </div>';
 
                                 ?>
-                                <button class="site-btn btn-submit border-0 rounded-4 mt-3 py-2 px-4 float-right"
+                                <button class="site-btn btn-submit border-0 rounded-4 mt-3 py-2 px-4 " style="float: right;"
                                     type="submit" name="orderProduct">Đặt
                                     Hàng</button>
 
@@ -90,7 +90,7 @@
             </div>
         </div>
         </div>
-        <script>
+        <!-- <script>
             async function loadDistricts() {
                 const province = document.getElementById('province').value;
 
@@ -125,7 +125,7 @@
                 });
             }
 
-        </script>
+        </script> -->
         <script>
             function validateForm() {
                 const productIds = document.querySelectorAll('input[name="productId[]"]');
