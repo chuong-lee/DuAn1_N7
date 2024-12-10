@@ -15,7 +15,7 @@
         }
         public function getOrderDetail($userId, $status)
         {
-            $sql = 'SELECT p.name, p.price, p.image, o.quantity, o2.status, o2.id, o2.id_user 
+            $sql = 'SELECT p.name, p.price, p.image, o.quantity, o2.status, o2.id, o2.id_user,  c.name as tenDanhMuc 
                 FROM product p 
                 JOIN orderdetail o ON o.id_product = p.id 
                 JOIN `order` o2 ON o2.id = o.id_order 

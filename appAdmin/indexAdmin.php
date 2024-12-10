@@ -6,32 +6,27 @@ $productController = new ProductAdminController();
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
     switch ($page) {
-        // case 'trangChuAdmin':
-        //     $productController->renderViewAdmin();
-        //     break;
-
-        // case 'baocao':
-        //     $productController->renderViewAdmin();
-        //     break;
-
         case 'addProducts':
             $productController->getAllCategory();
             $productController->addPro();
             break;
 
+        case 'editProducts':
+            $productController->viewEdit();
+            $productController->editPro();
+            break;
+
         case 'capnhatdanhmuc':
             // $productController->getProductByCategory();
             break;
-
-        case 'capnhatsanpham':
-            $productController->getDataByname();
+        
+        case 'delpro':
+            $productController->delPro();
             break;
 
-        // case 'thongtin':
-        //     $productController->renderViewAdmin();
-        //     break;
-
-
+        case 'sanpham':
+            $productController->getDataByname();
+            break;
 
         default:
             $home = new HomeAdminController();

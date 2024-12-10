@@ -1,9 +1,15 @@
 <?php
+class OrderStatus{
+    const PENDING = 'pending';
+    const PROCESSING = 'processing';
+    const COMPLETED = 'success';
+    const DELIVERED = 'delivered';
+    const CANCELLED = 'cancelled';
+}
 class OrderController{
     private $orderModel;
     private $cartModel;
     private $orderDetailModel;
-
     public $data = [];
     function __construct()
     {
@@ -53,15 +59,27 @@ class OrderController{
 
     
     function getOrderDetail(){
-        $userId = 4;
-        $status = 'pending';
-        $orderId = $this->orderDetailModel->getOrderDetail($userId, $status);
-        if($orderId){
-            $data['orderDetails'] = $orderId;
+        $data['statuses'] = [
+            OrderStatus::PENDING,
+            OrderStatus::PROCESSING,
+            OrderStatus::COMPLETED,
+            OrderStatus::DELIVERED,
+            OrderStatus::CANCELLED
+        ];
+        if(isset($_POST['clickStatus'])){
+            $userId = 4;
+            $status = $_POST['clickStatus'];
+            $orderId = $this->orderDetailModel->getOrderDetail($userId, $status);
+            if($orderId){
+                $data['orderDetails'] = $orderId;
+            }
             $this->renderView($data, 'orderInfo');
-        }else{
-            echo 'Chưa có đơn hàng nào được xử lý';
+
         }
+    }
+
+    function getStatusOrder(){
+        
     }
     
 }
