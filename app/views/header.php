@@ -10,14 +10,14 @@
   <title>Ubrand-shop</title>
   <link rel="icon" href="../public/client/images/logo.png" type="image/gif" sizes="16x16">
   <!-- main css-->
-  <link rel="stylesheet" href="../public/client/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../public/client/css/all.min.css">
-  <link rel="stylesheet" href="../public/client/css/hover-min.css">
-  <link rel="stylesheet" href="../public/client/css/flag-icons.min.css">
-  <link rel="stylesheet" href="../public/client/css/style.css">
+  <link rel="stylesheet" href="../public/client/css-test/bootstrap.min.css">
+  <link rel="stylesheet" href="../public/client/css-test/all.min.css">
+  <link rel="stylesheet" href="../public/client/css-test/hover-min.css">
+  <link rel="stylesheet" href="../public/client/css-test/flag-icons.min.css">
+  <link rel="stylesheet" href="../public/client/css-test/style.css">
   <link rel="stylesheet" href="../public/client/slick/slick.css">
-  <link rel="stylesheet" href="../public/client/css/sb-admin-2.min.css">
-  <link rel="stylesheet" href="../public/client/css/style.css">
+  <link rel="stylesheet" href="../public/client/css-test/sb-admin-2.min.css">
+  <link rel="stylesheet" href="../public/client/css-test/style.css">
   <link rel="stylesheet" href="../public/client/slick/slick.css">
   <link rel="stylesheet" href="../public/client/fonts/fontstyle.css">
   <!--link(rel='stylesheet' href='client/fonts/fontstyle.css')-->
@@ -84,7 +84,7 @@
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item" href="#">Thông tin người dùng</a></li>
                 <li><a class="dropdown-item" href="#">Thông tin đơn hàng</a></li>
-                <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+                <li><a class="dropdown-item" id="logout" href="#">Đăng xuất</a></li>
               </ul>
             </div>
             <!-- <form id="cart-form" action="index.php?page=gioHang" method="GET">
@@ -118,11 +118,18 @@
       userInfo.style.display = 'none'
     }
     document.getElementById('cart-link').addEventListener('click', function(e) {
-      console.log(22222222);
       if (userId) {
         document.getElementById('cart-link').href = `index.php?page=gioHang&userId=${userId}`
       } else {
         location.href="index.php?page=dangNhap";
       }
     });
+
+
+    document.querySelector('#logout').addEventListener('click', function(e){
+      if(userId){
+        sessionStorage.clear();
+        location.href="index.php?page=dangNhap";
+      }
+    })
   </script>
